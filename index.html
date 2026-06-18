@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プログラミングで、自分らしい働く未来を。| 株式会社Zabuton</title>
+  <title>プログラミングで、自分らしい未来を。| 株式会社Zabuton</title>
   <meta name="description" content="株式会社Zabutonは、障がいのある方を対象にプログラミング学習・就活準備・マッチング・定着支援を一貫してサポートするIT×福祉の会社です。横浜みなとみらい拠点、オンライン対応。">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://zabuton.co.jp/">
 
   <!-- OGP / Twitter Card
-       本番公開前 TODO: og:image を絶対URL（https://zabuton.co.jp/assets/img/ogp.png）に確認・更新すること -->
+       本番公開前 TODO: og:image を絶対URL（https://sawanori.github.io/zabuton-prototype/assets/img/ogp.png）に確認・更新すること -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="プログラミングで、自分らしい未来を。| 株式会社Zabuton">
   <meta property="og:description" content="障がいのある方のITキャリアを、学習・就活・マッチング・定着まで一貫サポート。経験ゼロからスタートできます。横浜みなとみらい拠点、全国オンライン対応。">
   <meta property="og:url" content="https://zabuton.co.jp/">
   <!-- 本番前 TODO: 以下の og:image を絶対URLへ変更すること（SNSクローラーは相対URL非対応） -->
-  <meta property="og:image" content="https://zabuton.co.jp/assets/img/ogp.png">
+  <meta property="og:image" content="https://sawanori.github.io/zabuton-prototype/assets/img/ogp.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="プログラミングで、自分らしい未来を。| 株式会社Zabuton">
   <meta name="twitter:description" content="障がいのある方のITキャリアを、学習・就活・マッチング・定着まで一貫サポート。経験ゼロからスタートできます。">
-  <meta name="twitter:image" content="https://zabuton.co.jp/assets/img/ogp.png">
+  <meta name="twitter:image" content="https://sawanori.github.io/zabuton-prototype/assets/img/ogp.png">
 
   <!-- Google Fonts: DotGothic16 (pixel JP) + Press Start 2P (pixel EN) + Noto Sans JP (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,14 +203,25 @@
       <!-- Background image — art direction: portrait (SP) / landscape (PC) -->
       <div class="hero__bg">
         <picture>
-          <!-- モバイル(〜767px): 縦長ヒーロー -->
+          <!-- モバイル(〜767px): 縦長ヒーロー WebP -->
+          <source
+            type="image/webp"
+            srcset="assets/img/top-v.webp"
+            media="(max-width: 767px)"
+          >
+          <!-- モバイル(〜767px): 縦長ヒーロー PNG fallback -->
           <source
             srcset="assets/img/top-v.png"
             media="(max-width: 767px)"
             width="840"
             height="1492"
           >
-          <!-- タブレット以上: 横長デスクトップ用 -->
+          <!-- タブレット以上: 横長デスクトップ用 WebP -->
+          <source
+            type="image/webp"
+            srcset="assets/img/top.webp"
+          >
+          <!-- タブレット以上: 横長デスクトップ用 PNG fallback -->
           <img
             src="assets/img/top.png"
             alt="オープンオフィスでチームメンバーが協働するPixel/Minecraft風3Dイラスト。車椅子ユーザーを含む多様なキャラクターがPC・タブレット・カンバンを使い仕事をしている。"
@@ -294,16 +305,28 @@
           <!-- Characters (c1–c4, inclusive representation) -->
           <div class="empathy__characters" aria-hidden="true">
             <div class="empathy__char">
-              <img src="assets/img/c1.png" alt="" width="140" height="187" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="assets/img/c1.webp">
+                <img src="assets/img/c1.png" alt="" width="140" height="187" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="empathy__char">
-              <img src="assets/img/c2.png" alt="" width="140" height="187" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="assets/img/c2.webp">
+                <img src="assets/img/c2.png" alt="" width="140" height="187" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="empathy__char">
-              <img src="assets/img/c3.png" alt="" width="140" height="187" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="assets/img/c3.webp">
+                <img src="assets/img/c3.png" alt="" width="140" height="187" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="empathy__char">
-              <img src="assets/img/c4.png" alt="" width="140" height="187" loading="lazy">
+              <picture>
+                <source type="image/webp" srcset="assets/img/c4.webp">
+                <img src="assets/img/c4.png" alt="" width="140" height="187" loading="lazy" decoding="async">
+              </picture>
             </div>
           </div>
         </div>
@@ -513,67 +536,12 @@
             </div>
             <h3 class="trust-title">信頼できるネットワーク</h3>
             <p class="trust-text">
-              株式会社アットウェア・一般社団法人翔明会・日本アントレプレナー学会との提携、JEAP（日本障害者雇用促進事業者協会）加盟により、広範な就労ネットワークを活かしたサポートが可能です。
+              株式会社アットウェア・一般社団法人翔明会との提携、JEAP（日本障害者雇用促進事業者協会）加盟により、広範な就労ネットワークを活かしたサポートが可能です。
             </p>
           </div>
         </div>
 
-        <!-- Story cards (定性) -->
-        <h3 class="cases__sub-heading">支援事例ストーリー</h3>
-        <div class="cases__stories">
-          <article class="card card--case">
-            <div class="card__img">
-              <div style="width:100%;height:100%;background:#F0EBE1;display:flex;align-items:center;justify-content:center;">
-                <img src="assets/img/c2.png" alt="" width="100" height="133" loading="lazy" style="max-height:100%;width:auto;">
-              </div>
-            </div>
-            <div class="card__body">
-              <span class="card__tag">プログラミング学習 → 就職</span>
-              <h4 class="card__title">「コードを書けた日の達成感が、自信につながった」</h4>
-              <p class="card__text">
-                最初はパソコン操作から始めたAさん。週1回のオンラインセッションを重ね、半年後には簡単なWebページを自分で作れるように。就職後も「あの達成感が支えになっている」と話してくれました。
-              </p>
-              <a class="card__link" href="cases.html">事例一覧を見る</a>
-            </div>
-          </article>
-
-          <article class="card card--case">
-            <div class="card__img">
-              <div style="width:100%;height:100%;background:#F0EBE1;display:flex;align-items:center;justify-content:center;">
-                <img src="assets/img/c4.png" alt="" width="100" height="133" loading="lazy" style="max-height:100%;width:auto;">
-              </div>
-            </div>
-            <div class="card__body">
-              <span class="card__tag">就活サポート → マッチング</span>
-              <h4 class="card__title">「自分の「できること」を言葉にする練習が変えてくれた」</h4>
-              <p class="card__text">
-                長年「自分には無理」と感じてきたBさん。自己分析セッションを通じて、整理整頓・データ入力への得意を発見。自分に合った企業と出会い、現在も活躍中です。
-              </p>
-              <a class="card__link" href="cases.html">事例一覧を見る</a>
-            </div>
-          </article>
-
-          <article class="card card--case">
-            <div class="card__img">
-              <div style="width:100%;height:100%;background:#F0EBE1;display:flex;align-items:center;justify-content:center;">
-                <img src="assets/img/c3.png" alt="" width="100" height="133" loading="lazy" style="max-height:100%;width:auto;">
-              </div>
-            </div>
-            <div class="card__body">
-              <span class="card__tag">定着支援</span>
-              <h4 class="card__title">「困ったときに相談できる場所がある安心感」</h4>
-              <p class="card__text">
-                就職後も月1回の定期面談を続けているCさん。「働き続けられているのは、何かあったときに話を聞いてもらえる場所があるから」と話します。定着支援の重要性を実感しています。
-              </p>
-              <a class="card__link" href="cases.html">事例一覧を見る</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- 公開前確認: 実際の利用者の声・事例ストーリーが得られた場合は差し替え -->
-        <p class="cases__stories-note">
-          ※ 事例は本人同意のもと、プライバシーに配慮して掲載しています。お名前はアルファベット表記です。
-        </p>
+        <!-- 支援実績は随時更新予定 -->
 
         <!-- Affiliations -->
         <div class="cases__affiliations">
@@ -581,7 +549,6 @@
           <ul class="cases__affiliations-list" aria-label="提携・加盟先">
             <li class="cases__affiliations-item">株式会社アットウェア</li>
             <li class="cases__affiliations-item">一般社団法人翔明会</li>
-            <li class="cases__affiliations-item">日本アントレプレナー学会</li>
             <li class="cases__affiliations-item">JEAP（日本障害者雇用促進事業者協会）</li>
           </ul>
           <!-- ※ ロゴ掲載は許諾確認後に追加予定 -->
@@ -630,7 +597,7 @@
               <img src="assets/img/staff-kitano.png" alt="北野弘治" width="500" height="750" loading="lazy">
             </div>
             <div class="card__body">
-              <span class="card__role">代表取締役</span>
+              <span class="card__role">株式会社Zabuton 代表取締役 / Head Coach</span>
               <h3 class="card__name">北野 弘治</h3>
               <p class="card__message">
                 IT×福祉の橋渡しを通じて、すべての人が自分らしく活躍できる社会を実現します。「ともに成長し、未来を築く」を信念に、日々活動しています。
@@ -645,7 +612,7 @@
               <img src="assets/img/staff-miyamoto.png" alt="宮本達之" width="500" height="749" loading="lazy">
             </div>
             <div class="card__body">
-              <span class="card__role">社会福祉士</span>
+              <span class="card__role">社会福祉士／一般社団法人翔明会 代表理事（つなぐコミュニティーズ運営）/ Support Coach</span>
               <h3 class="card__name">宮本 達之</h3>
               <p class="card__message">
                 福祉の専門家として、利用者一人ひとりの状況を丁寧に把握します。「安心できる環境」づくりが、チャレンジの第一歩だと考えています。
@@ -660,7 +627,7 @@
               <img src="assets/img/staff-nagaya.png" alt="永谷弘宣" width="500" height="749" loading="lazy">
             </div>
             <div class="card__body">
-              <span class="card__role">Technical Coach</span>
+              <span class="card__role">つなぐコミュニティーズ 技術コーチ（ITエンジニア育成）/ Technical Coach</span>
               <h3 class="card__name">永谷 弘宣</h3>
               <p class="card__message">
                 「技術は手段、目的は自信を育てること」。プログラミングを通じて、一人ひとりの「できた！」を積み上げるお手伝いをします。
@@ -756,7 +723,7 @@
                   <div class="faq-item__a-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <span class="faq-item__a-label" aria-hidden="true">A</span>
                     <p class="faq-item__a-text" itemprop="text">
-                      身体障がい・精神障がい・知的障がい・発達障がいなど、障がいの種類・等級を問わず相談をお受けしています。まずはお気軽にお問い合わせください。個別の状況を丁寧にヒアリングしたうえで、最適なサポート方針をご提案します。
+                      身体障がい・精神障がい・知的障がい・発達障がいなど、障がいの種類・程度を問わず相談をお受けしています。まずはお気軽にお問い合わせください。個別の状況を丁寧にヒアリングしたうえで、最適なサポート方針をご提案します。
                     </p>
                   </div>
                 </div>
@@ -843,22 +810,8 @@
             </div>
             <div class="card__body">
               <h3 class="card__title">
-                <a href="/column/programming-for-everyone/" class="card__link" style="display:inline; font-size:inherit; border:none; padding:0; font-family:inherit; font-weight:inherit; color:inherit;">
+                <a href="column-programming-for-everyone.html" class="card__link" style="display:inline; font-size:inherit; border:none; padding:0; font-family:inherit; font-weight:inherit; color:inherit;">
                   プログラミングは「誰でも」学べる時代へ ── 障がいのある方のITキャリアの可能性
-                </a>
-              </h3>
-            </div>
-          </article>
-
-          <article class="card card--news">
-            <div class="card__meta">
-              <span class="card__date">2026.06.10</span>
-              <span class="card__category">お知らせ</span>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">
-                <a href="/news/jeap-member/" class="card__link" style="display:inline; font-size:inherit; border:none; padding:0; font-family:inherit; font-weight:inherit; color:inherit;">
-                  JEAP（日本障害者雇用促進事業者協会）に加盟しました
                 </a>
               </h3>
             </div>
@@ -871,8 +824,22 @@
             </div>
             <div class="card__body">
               <h3 class="card__title">
-                <a href="/column/ai-agent-job-support/" class="card__link" style="display:inline; font-size:inherit; border:none; padding:0; font-family:inherit; font-weight:inherit; color:inherit;">
+                <a href="column-ai-agent-job-support.html" class="card__link" style="display:inline; font-size:inherit; border:none; padding:0; font-family:inherit; font-weight:inherit; color:inherit;">
                   AIエージェント活用で変わる就労支援の現場 ── 私たちの取り組み
+                </a>
+              </h3>
+            </div>
+          </article>
+
+          <article class="card card--news">
+            <div class="card__meta">
+              <span class="card__date">2025.07.31</span>
+              <span class="card__category">お知らせ</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">
+                <a href="news-jeap-member.html" class="card__link" style="display:inline; font-size:inherit; border:none; padding:0; font-family:inherit; font-weight:inherit; color:inherit;">
+                  JEAP（日本障害者雇用促進事業者協会）に加盟しました
                 </a>
               </h3>
             </div>
@@ -987,7 +954,6 @@
       <ul class="site-footer__partners-list" aria-label="提携・加盟先">
         <li><span class="site-footer__partner-name">株式会社アットウェア</span></li>
         <li><span class="site-footer__partner-name">一般社団法人翔明会</span></li>
-        <li><span class="site-footer__partner-name">日本アントレプレナー学会</span></li>
         <li><span class="site-footer__partner-name">JEAP（日本障害者雇用促進事業者協会）</span></li>
       </ul>
     </div>
@@ -1000,7 +966,7 @@
           <li><a class="site-footer__legal-link" href="accessibility.html">アクセシビリティ方針</a></li>
         </ul>
         <p class="site-footer__copyright">
-          <small>&copy; 2016 株式会社Zabuton</small>
+          <small>&copy; 2016–2026 株式会社Zabuton</small>
         </p>
       </div>
     </div>
