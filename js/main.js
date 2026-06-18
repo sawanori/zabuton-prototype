@@ -2,6 +2,7 @@
  * main.js — 株式会社Zabuton サイトプロトタイプ
  * Vanilla JS, no dependencies.
  * Features:
+ *   - Hero stable height (--hero-vh): モバイルのアドレスバー開閉によるガクガクを防止
  *   - Nav hamburger / drawer toggle (aria-expanded)
  *   - Service dropdown (keyboard + mouse)
  *   - FAQ accordion (aria-expanded, grid-template-rows animation)
@@ -11,6 +12,35 @@
 
 (function () {
   'use strict';
+
+  // ---------------------------------------------------------------------------
+  // HERO STABLE HEIGHT — --hero-vh
+  // モバイルのアドレスバー開閉は高さのみ変化するので scroll では絶対に更新しない。
+  // 更新トリガー: orientationchange と「幅が変わった resize」のみ。
+  // ---------------------------------------------------------------------------
+
+  var _lastHeroWidth = window.innerWidth;
+
+  function setHeroVh() {
+    document.documentElement.style.setProperty('--hero-vh', window.innerHeight + 'px');
+    _lastHeroWidth = window.innerWidth;
+  }
+
+  // 初期設定（ドキュメント解析直後）
+  setHeroVh();
+
+  // 画面回転時は必ず再設定
+  window.addEventListener('orientationchange', function () {
+    // orientationchange 直後は innerHeight がまだ旧値のことがあるため rAF 後に読む
+    requestAnimationFrame(setHeroVh);
+  });
+
+  // resize: 幅が変わった場合のみ再設定（高さだけの変化＝アドレスバー開閉は無視）
+  window.addEventListener('resize', function () {
+    if (window.innerWidth !== _lastHeroWidth) {
+      setHeroVh();
+    }
+  }, { passive: true });
 
   // ---------------------------------------------------------------------------
   // UTILITY

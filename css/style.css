@@ -1533,8 +1533,9 @@ hr {
 
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: 100vh; /* 最古フォールバック */
+  min-height: 100svh; /* svh 対応ブラウザ：小ビューポート基準で安定 */
+  min-height: var(--hero-vh, 100svh); /* JS 設定値が最優先＝初期高さで完全固定 */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1565,6 +1566,8 @@ hr {
   object-fit: cover;
   object-position: center top;
   display: block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 @media (min-width: 768px) {
   .hero__bg img {
