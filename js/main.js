@@ -219,6 +219,9 @@
   // Reveal .lp-sticky-cta (.is-visible) after the hero scrolls out of view;
   // hide again when near the CTA band / footer to avoid duplicate CTAs.
   // Respects prefers-reduced-motion: CSS guards transition, JS only toggles class.
+  //
+  // Performance: offsets are cached once in measure(); the scroll/rAF hot path
+  // reads ONLY window.scrollY — zero getBoundingClientRect calls on scroll.
   // ---------------------------------------------------------------------------
 
   var stickyCta = qs('.lp-sticky-cta');
@@ -231,55 +234,80 @@
     var ctaBand = qs('.cta-band');
     var siteFooter = qs('.site-footer');
 
-    function updateStickyCta() {
+    // Cached page-absolute offsets (set by measure, never touched on scroll)
+    var cachedHeroBottom = 0;
+    var cachedHideThreshold = Infinity;
+
+    /** Read layout ONCE and store page-absolute Y values. */
+    function measure() {
       var scrollY = window.scrollY;
       var viewH = window.innerHeight;
 
-      // Determine hero bottom — hide bar until hero is fully scrolled past
-      var heroBottom = 0;
+      cachedHeroBottom = 0;
       if (heroSection) {
         var heroRect = heroSection.getBoundingClientRect();
-        heroBottom = scrollY + heroRect.bottom;
+        cachedHeroBottom = scrollY + heroRect.bottom;
       }
 
-      // Determine hide-again threshold: top of CTA band or footer
-      var hideThreshold = Infinity;
+      cachedHideThreshold = Infinity;
       if (ctaBand) {
         var ctaRect = ctaBand.getBoundingClientRect();
-        hideThreshold = Math.min(hideThreshold, scrollY + ctaRect.top - viewH * 0.5);
+        cachedHideThreshold = Math.min(
+          cachedHideThreshold,
+          scrollY + ctaRect.top - viewH * 0.5
+        );
       }
       if (siteFooter) {
         var footerRect = siteFooter.getBoundingClientRect();
-        hideThreshold = Math.min(hideThreshold, scrollY + footerRect.top - viewH * 0.3);
+        cachedHideThreshold = Math.min(
+          cachedHideThreshold,
+          scrollY + footerRect.top - viewH * 0.3
+        );
       }
 
-      var pastHero = scrollY > heroBottom;
-      var nearFooterOrCta = scrollY >= hideThreshold;
+      // After re-measuring, immediately re-evaluate visibility
+      applyStickyCta(window.scrollY);
+    }
 
-      if (pastHero && !nearFooterOrCta) {
+    /**
+     * Pure comparison against cached values — no layout reads.
+     * @param {number} scrollY
+     */
+    function applyStickyCta(scrollY) {
+      var pastHero = scrollY > cachedHeroBottom;
+      var nearFooterOrCta = scrollY >= cachedHideThreshold;
+      var shouldShow = pastHero && !nearFooterOrCta;
+      var isVisible = stickyCta.classList.contains('is-visible');
+      if (shouldShow && !isVisible) {
         stickyCta.classList.add('is-visible');
-      } else {
+      } else if (!shouldShow && isVisible) {
         stickyCta.classList.remove('is-visible');
       }
     }
 
-    // Use IntersectionObserver on hero for efficient detection when available
-    if ('IntersectionObserver' in window && heroSection) {
-      var heroObserver = new IntersectionObserver(
-        function (entries) {
-          // When hero leaves viewport (not intersecting), also run full check
-          updateStickyCta();
-        },
-        { threshold: 0 }
-      );
-      heroObserver.observe(heroSection);
+    // rAF ticking guard — avoids multiple rAF callbacks per frame
+    var stickyCtaTicking = false;
+
+    window.addEventListener('scroll', function () {
+      if (stickyCtaTicking) return;
+      stickyCtaTicking = true;
+      requestAnimationFrame(function () {
+        applyStickyCta(window.scrollY);
+        stickyCtaTicking = false;
+      });
+    }, { passive: true });
+
+    // Measure on init, after images load, and on viewport change
+    measure();
+    window.addEventListener('load', measure);
+
+    var resizeTimer;
+    function onResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(measure, 150);
     }
-
-    // Scroll listener for ongoing hide/show near footer/CTA band
-    window.addEventListener('scroll', updateStickyCta, { passive: true });
-
-    // Initial check (e.g. page loaded mid-scroll)
-    updateStickyCta();
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
   }
 
   // ---------------------------------------------------------------------------
@@ -289,16 +317,19 @@
   const siteHeader = qs('.site-header');
 
   if (siteHeader) {
-    let lastScrollY = window.scrollY;
+    let headerTicking = false;
 
     window.addEventListener('scroll', function () {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 10) {
-        siteHeader.classList.add('is-scrolled');
-      } else {
-        siteHeader.classList.remove('is-scrolled');
-      }
-      lastScrollY = currentScrollY;
+      if (headerTicking) return;
+      headerTicking = true;
+      requestAnimationFrame(function () {
+        if (window.scrollY > 10) {
+          siteHeader.classList.add('is-scrolled');
+        } else {
+          siteHeader.classList.remove('is-scrolled');
+        }
+        headerTicking = false;
+      });
     }, { passive: true });
   }
 

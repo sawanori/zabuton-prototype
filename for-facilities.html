@@ -769,14 +769,18 @@
 
         <!-- スポットキャラクター (lp-fac-flow-spot: 透過PNG) -->
         <div class="service-flow__spot" aria-hidden="true" style="text-align:center;margin:2rem 0 1.5rem">
-          <img
-            src="assets/img/lp-fac-flow-spot.png"
-            width="1520"
-            height="2688"
-            alt=""
-            loading="lazy"
-            style="max-width:180px;width:100%;height:auto"
-          >
+          <picture>
+            <source type="image/webp" srcset="assets/img/lp-fac-flow-spot.webp">
+            <img
+              src="assets/img/lp-fac-flow-spot.png"
+              width="360"
+              height="637"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              style="max-width:180px;width:100%;height:auto"
+            >
+          </picture>
         </div>
 
         <!-- フロー末尾 CTA -->
@@ -1083,15 +1087,19 @@
       <div class="cta-band__inner" style="position:relative;overflow:hidden">
 
         <!-- 装飾スポット画像 (透過PNG・aria-hidden) — T16 -->
-        <img
-          src="assets/img/lp-fac-cta.png"
-          width="2336"
-          height="1744"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          style="position:absolute;right:0;bottom:-1rem;max-width:220px;width:30%;height:auto;pointer-events:none;opacity:0.9"
-        >
+        <picture>
+          <source type="image/webp" srcset="assets/img/lp-fac-cta.webp">
+          <img
+            src="assets/img/lp-fac-cta.png"
+            width="440"
+            height="328"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            style="position:absolute;right:0;bottom:-1rem;max-width:220px;width:30%;height:auto;pointer-events:none;opacity:0.9"
+          >
+        </picture>
 
         <span class="cta-band__eyebrow" aria-hidden="true">CONTACT US</span>
         <h2 class="cta-band__title" id="facilities-cta-title">
