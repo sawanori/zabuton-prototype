@@ -1,0 +1,5503 @@
+@charset "UTF-8";
+:root {
+  --color-red: #E03030;
+  --color-brown: #8B6340;
+  --color-green: #4E7C56;
+  --color-cyan: #7EC8D8;
+  --color-offwhite: #FAF8F4;
+  --color-beige: #F0EBE1;
+  --color-text: #2C1F14;
+  --color-text-sub: #5C4230;
+  --color-white: #FFFFFF;
+  --header-h: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  background-color: #FAF8F4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 9999;
+  background: #E03030;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border: 3px solid #FFFFFF;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  text-decoration: none;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 12px 24px;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4 {
+  font-family: "DotGothic16", monospace;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #2C1F14;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
+p {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  margin-bottom: 1em;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: #8B6340;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: all 0.15s ease;
+}
+a:hover {
+  color: #E03030;
+}
+a:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: repeating-linear-gradient(to right, #8B6340 0, #8B6340 6px, transparent 6px, transparent 10px);
+  margin: 48px 0;
+  opacity: 0.4;
+}
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .u-container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.u-section-pad {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .u-section-pad {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+.u-bg-offwhite {
+  background-color: #FAF8F4;
+}
+
+.u-bg-beige {
+  background-color: #F0EBE1;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .u-br-sp {
+    display: none;
+  }
+}
+
+.pixel-heading {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.pixel-heading__label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #8B6340;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.625rem;
+}
+@media (min-width: 768px) {
+  .pixel-heading__label {
+    font-size: 0.6875rem;
+  }
+}
+.pixel-heading__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.pixel-heading__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pixel-heading__rule::before, .pixel-heading__rule::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #8B6340;
+}
+.pixel-heading__rule span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #E03030;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.pixel-heading__sub {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  margin-top: 16px;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pixel-diamond {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #E03030;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.pixel-tag {
+  display: inline-block;
+  background: #E03030;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(192.2142857143, 28.7857142857, 28.7857142857);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+}
+.pixel-tag--green {
+  display: inline-block;
+  background: #4E7C56;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(58.3069306931, 92.6930693069, 64.2871287129);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+}
+.pixel-tag--brown {
+  display: inline-block;
+  background: #8B6340;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(104.078817734, 74.1280788177, 47.921182266);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+}
+
+.pixel-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.75rem;
+  color: #FFFFFF;
+  background: #E03030;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pixel-divider {
+  height: 2px;
+  border: none;
+  background: repeating-linear-gradient(to right, #8B6340 0, #8B6340 6px, transparent 6px, transparent 10px);
+  opacity: 0.35;
+  margin: 48px 0;
+}
+
+.pixel-grid-bg {
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.06) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.pixel-card-base {
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+}
+.pixel-card-base:hover {
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.25);
+  transform: translate(-1px, -1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pixel-card-base:hover {
+    transform: none;
+  }
+}
+
+.pixel-icon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: #FAF8F4;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  flex-shrink: 0;
+}
+.pixel-icon-frame svg {
+  width: 36px;
+  height: 36px;
+}
+.pixel-icon-frame--red {
+  background: #E03030;
+}
+.pixel-icon-frame--red svg path, .pixel-icon-frame--red svg rect, .pixel-icon-frame--red svg circle, .pixel-icon-frame--red svg polygon {
+  fill: #FFFFFF;
+}
+.pixel-icon-frame--brown {
+  background: #8B6340;
+}
+.pixel-icon-frame--brown svg path, .pixel-icon-frame--brown svg rect, .pixel-icon-frame--brown svg circle, .pixel-icon-frame--brown svg polygon {
+  fill: #FFFFFF;
+}
+.pixel-icon-frame--green {
+  background: #4E7C56;
+}
+.pixel-icon-frame--green svg path, .pixel-icon-frame--green svg rect, .pixel-icon-frame--green svg circle, .pixel-icon-frame--green svg polygon {
+  fill: #FFFFFF;
+}
+.pixel-icon-frame--lg {
+  width: 80px;
+  height: 80px;
+}
+.pixel-icon-frame--lg svg {
+  width: 48px;
+  height: 48px;
+}
+
+.pixel-accent-border {
+  border-left: 4px solid #E03030;
+  padding-left: 24px;
+}
+
+.pixel-character {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.pixel-character img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  background: #F0EBE1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: 16px 48px;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+}
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.3);
+}
+.btn:active {
+  transform: translate(0, 0);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+}
+.btn:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover, .btn:active {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.btn__arrow {
+  display: inline-block;
+  font-style: normal;
+  font-family: monospace;
+  font-size: 1.1em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.btn--primary {
+  background: #E03030;
+  color: #FFFFFF;
+  border-color: rgb(183.3428571429, 27.4571428571, 27.4571428571);
+}
+.btn--primary:hover {
+  background: rgb(201.0857142857, 30.1142857143, 30.1142857143);
+  color: #FFFFFF;
+}
+
+.btn--secondary {
+  background: #8B6340;
+  color: #FFFFFF;
+  border-color: rgb(104.078817734, 74.1280788177, 47.921182266);
+}
+.btn--secondary:hover {
+  background: rgb(111.0630541872, 79.1024630542, 51.1369458128);
+  color: #FFFFFF;
+}
+
+.btn--outline {
+  background: transparent;
+  color: #2C1F14;
+  border-color: #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+}
+.btn--outline:hover {
+  background: #2C1F14;
+  color: #FAF8F4;
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  box-shadow: 3px 3px 0 rgba(255, 255, 255, 0.3);
+}
+.btn--outline-white:hover {
+  background: #FFFFFF;
+  color: #2C1F14;
+}
+
+.btn--sm {
+  font-size: 0.9375rem;
+  padding: 12px 24px;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+}
+
+.btn--lg {
+  font-size: 1.0625rem;
+  padding: 24px 64px;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.btn-group--center {
+  justify-content: center;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.card__body {
+  padding: 32px;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.card__icon {
+  flex-shrink: 0;
+}
+.card__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.card__text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #8B6340;
+  text-decoration: none;
+  border-bottom: 2px solid #8B6340;
+  padding-bottom: 2px;
+  transition: all 0.15s ease;
+}
+.card__link:hover {
+  color: #E03030;
+  border-color: #E03030;
+}
+.card__link:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+}
+.card__link::after {
+  content: "→";
+  font-family: monospace;
+}
+
+.card--service .card__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #F0EBE1;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+.card--service .card__icon-wrap svg {
+  width: 32px;
+  height: 32px;
+}
+.card--service .card__number {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5625rem;
+  color: #5C4230;
+  margin-bottom: 8px;
+  display: block;
+}
+.card--service .card__title {
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+@media (min-width: 768px) {
+  .card--service .card__title {
+    font-size: 1.25rem;
+  }
+}
+.card--service .card__body {
+  padding: 24px;
+}
+@media (min-width: 768px) {
+  .card--service .card__body {
+    padding: 32px;
+  }
+}
+
+.card--case .card__img {
+  aspect-ratio: 16/9;
+  background: #F0EBE1;
+  border-bottom: 2px solid #2C1F14;
+  overflow: hidden;
+}
+.card--case .card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card--case .card__tag {
+  display: inline-block;
+  background: #4E7C56;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(58.3069306931, 92.6930693069, 64.2871287129);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+}
+.card--case .card__body {
+  padding: 24px;
+}
+
+.card--news {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+}
+@media (min-width: 768px) {
+  .card--news {
+    flex-direction: column;
+  }
+}
+.card--news .card__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: #F0EBE1;
+  border-right: 2px solid #2C1F14;
+  min-width: 80px;
+}
+@media (min-width: 768px) {
+  .card--news .card__meta {
+    flex-direction: row;
+    align-items: center;
+    border-right: none;
+    border-bottom: 2px solid #2C1F14;
+    padding: 12px 16px;
+  }
+}
+.card--news .card__date {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.75rem;
+  color: #5C4230;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+@media (min-width: 768px) {
+  .card--news .card__date {
+    writing-mode: horizontal-tb;
+  }
+}
+.card--news .card__category {
+  display: inline-block;
+  background: #8B6340;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(104.078817734, 74.1280788177, 47.921182266);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  font-size: 0.6875rem;
+  padding: 2px 4px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+@media (min-width: 768px) {
+  .card--news .card__category {
+    writing-mode: horizontal-tb;
+  }
+}
+.card--news .card__body {
+  padding: 16px;
+  flex: 1;
+}
+.card--news .card__title {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.card--team {
+  text-align: center;
+}
+.card--team .card__photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #F0EBE1;
+  border-bottom: 2px solid #2C1F14;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card--team .card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  background: #F0EBE1;
+}
+.card--team .card__photo--placeholder {
+  position: relative;
+}
+.card--team .card__photo--placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(44, 31, 20, 0.06) 8px, rgba(44, 31, 20, 0.06) 16px);
+}
+.card--team .card__body {
+  padding: 24px;
+}
+.card--team .card__role {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #8B6340;
+  margin-bottom: 8px;
+  display: block;
+}
+.card--team .card__name {
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+.card--team .card__message {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #FAF8F4;
+  border-bottom: 3px solid #2C1F14;
+  box-shadow: 0 2px 0 rgba(44, 31, 20, 0.12);
+}
+.site-header.is-scrolled {
+  box-shadow: 0 3px 0 rgba(44, 31, 20, 0.2), 0 6px 16px rgba(44, 31, 20, 0.08);
+}
+.site-header__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .site-header__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.site-header__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  height: var(--header-h);
+  gap: 16px;
+}
+@media (min-width: 1024px) {
+  .site-header__inner {
+    height: 72px;
+  }
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.site-logo__img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+@media (min-width: 1024px) {
+  .site-logo__img {
+    height: 38px;
+  }
+}
+.site-logo:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.header-btob-link {
+  display: none;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  text-decoration: none;
+  border-bottom: 1px solid #5C4230;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+@media (min-width: 1024px) {
+  .header-btob-link {
+    display: inline;
+  }
+}
+.header-btob-link:hover {
+  color: #8B6340;
+  border-color: #8B6340;
+}
+.header-btob-link:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+}
+
+.global-nav {
+  display: none;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+@media (min-width: 1024px) {
+  .global-nav {
+    display: flex;
+  }
+}
+.global-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+.global-nav__item {
+  position: relative;
+}
+.global-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #2C1F14;
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.global-nav__link:hover {
+  color: #8B6340;
+  border-color: #8B6340;
+  background: #F0EBE1;
+}
+.global-nav__link:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+}
+.global-nav__link[aria-expanded]::after {
+  content: "▾";
+  font-size: 0.75em;
+  margin-left: 4px;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.global-nav__link[aria-expanded][aria-expanded=true]::after {
+  transform: rotate(180deg);
+}
+.global-nav__cta .btn {
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: #FAF8F4;
+  border: 3px solid #2C1F14;
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.25);
+  z-index: 200;
+  display: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.nav-dropdown.is-open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown {
+    transition: none;
+  }
+}
+.nav-dropdown__list {
+  list-style: none;
+  padding: 8px 0;
+}
+.nav-dropdown__item {
+  border-bottom: 1px dashed rgba(44, 31, 20, 0.15);
+}
+.nav-dropdown__item:last-child {
+  border-bottom: none;
+}
+.nav-dropdown__link {
+  display: block;
+  padding: 12px 24px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: #2C1F14;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.nav-dropdown__link:hover {
+  background: #F0EBE1;
+  color: #8B6340;
+  padding-left: 32px;
+}
+.nav-dropdown__link:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  outline-offset: -2px;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+@media (min-width: 1024px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #2C1F14;
+  transition: all 0.15s ease;
+  transform-origin: center;
+}
+.nav-toggle:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+}
+.nav-toggle[aria-expanded=true] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded=true] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle[aria-expanded=true] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle span {
+    transition: none;
+  }
+}
+
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  background: #FAF8F4;
+  border-top: 3px solid #2C1F14;
+  z-index: 99;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .nav-drawer {
+    left: auto;
+    width: min(400px, 80vw);
+    box-shadow: -4px 0 0 rgba(44, 31, 20, 0.25);
+  }
+}
+@media (min-width: 1024px) {
+  .nav-drawer {
+    display: none;
+  }
+}
+.nav-drawer.is-open {
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer {
+    transition: none;
+  }
+}
+.nav-drawer__list {
+  list-style: none;
+  padding: 16px 0;
+  flex: 1;
+}
+.nav-drawer__item {
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.2);
+}
+.nav-drawer__link {
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  min-height: 48px;
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C1F14;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.nav-drawer__link:hover {
+  background: #F0EBE1;
+  color: #8B6340;
+  padding-left: 64px;
+}
+.nav-drawer__link:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  outline-offset: -2px;
+}
+.nav-drawer__sublist {
+  list-style: none;
+  background: #F0EBE1;
+  border-top: 1px dashed rgba(44, 31, 20, 0.2);
+}
+.nav-drawer__subitem {
+  border-bottom: 1px dashed rgba(44, 31, 20, 0.1);
+}
+.nav-drawer__sublink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 48px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: #5C4230;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.nav-drawer__sublink::before {
+  content: "└";
+  font-family: monospace;
+  color: #8B6340;
+  opacity: 0.6;
+}
+.nav-drawer__sublink:hover {
+  color: #8B6340;
+}
+.nav-drawer__sublink:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  outline-offset: -2px;
+}
+.nav-drawer__footer {
+  padding: 24px 24px 64px;
+  border-top: 2px solid #2C1F14;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.nav-drawer__footer .btn {
+  width: 100%;
+  justify-content: center;
+}
+.nav-drawer__btob {
+  text-align: center;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  text-decoration: underline;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  background: rgba(44, 31, 20, 0.5);
+  z-index: 98;
+}
+.nav-overlay.is-open {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .nav-overlay {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 72px;
+  }
+}
+.site-footer {
+  background: #2C1F14;
+  color: #FAF8F4;
+  border-top: 4px solid #E03030;
+  position: relative;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(250, 248, 244, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+.site-footer__top {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .site-footer__top {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.site-footer__top {
+  padding-top: 80px;
+  padding-bottom: 48px;
+  position: relative;
+}
+.site-footer__brand {
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed rgba(250, 248, 244, 0.2);
+}
+.site-footer__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.site-footer__logo:focus-visible {
+  outline: 3px solid #FAF8F4;
+  outline-offset: 2px;
+}
+.site-footer__logo-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #FAF8F4;
+  padding: 8px 16px;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+}
+.site-footer__logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+.site-footer__tagline {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: rgba(250, 248, 244, 0.7);
+  margin-top: 8px;
+}
+.site-footer__nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 24px;
+}
+@media (min-width: 768px) {
+  .site-footer__nav-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.site-footer__col-title {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FAF8F4;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(250, 248, 244, 0.25);
+  letter-spacing: 0.05em;
+}
+.site-footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.site-footer__link {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  color: rgba(250, 248, 244, 0.75);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+.site-footer__link:hover {
+  color: #FAF8F4;
+  text-decoration: underline;
+}
+.site-footer__link:focus-visible {
+  outline: 3px solid #FAF8F4;
+  outline-offset: 2px;
+}
+.site-footer__partners {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px dashed rgba(250, 248, 244, 0.2);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .site-footer__partners {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.site-footer__partners {
+  padding-bottom: 0;
+}
+.site-footer__partners-label {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: rgba(250, 248, 244, 0.5);
+  margin-bottom: 16px;
+  display: block;
+}
+.site-footer__partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 16px;
+  list-style: none;
+}
+.site-footer__partner-name {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(250, 248, 244, 0.6);
+  background: rgba(250, 248, 244, 0.07);
+  border: 1px solid rgba(250, 248, 244, 0.15);
+  padding: 4px 12px;
+  white-space: nowrap;
+  min-width: 200px;
+  text-align: center;
+}
+.site-footer__bottom {
+  border-top: 2px solid rgba(250, 248, 244, 0.15);
+  padding: 24px 0;
+  position: relative;
+}
+.site-footer__bottom-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .site-footer__bottom-inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.site-footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .site-footer__bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+.site-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .site-footer__legal-links {
+    justify-content: flex-start;
+  }
+}
+.site-footer__legal-link {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(250, 248, 244, 0.55);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.site-footer__legal-link:hover {
+  color: #FAF8F4;
+  text-decoration: underline;
+}
+.site-footer__legal-link:focus-visible {
+  outline: 3px solid #FAF8F4;
+  outline-offset: 2px;
+}
+.site-footer__copyright {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: rgba(250, 248, 244, 0.4);
+  order: -1;
+}
+@media (min-width: 768px) {
+  .site-footer__copyright {
+    order: unset;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 24px;
+}
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+.breadcrumb__link {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: all 0.15s ease;
+}
+.breadcrumb__link:hover {
+  color: #8B6340;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.breadcrumb__link:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.breadcrumb__separator {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  opacity: 0.5;
+  padding: 0 8px;
+  flex-shrink: 0;
+  user-select: none;
+}
+.breadcrumb__current {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2C1F14;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.breadcrumb__current::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #E03030;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.breadcrumb--on-dark .breadcrumb__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+.breadcrumb--on-dark .breadcrumb__link:hover {
+  color: #FFFFFF;
+}
+.breadcrumb--on-dark .breadcrumb__current {
+  color: #FFFFFF;
+}
+.breadcrumb--on-dark .breadcrumb__separator {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #2C1F14;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(250, 248, 244, 0.035) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__bg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+@media (min-width: 768px) {
+  .hero__bg img {
+    object-position: 65% center;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__bg img {
+    object-position: center center;
+  }
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(28, 18, 10, 0.2) 0%, rgba(28, 18, 10, 0.45) 30%, rgba(28, 18, 10, 0.72) 55%, rgba(28, 18, 10, 0.85) 80%, rgba(28, 18, 10, 0.9) 100%);
+}
+@media (min-width: 768px) {
+  .hero__overlay {
+    background: rgba(28, 18, 10, 0.6);
+  }
+}
+@media (min-width: 1024px) {
+  .hero__overlay {
+    background: linear-gradient(to right, rgba(28, 18, 10, 0.82) 0%, rgba(28, 18, 10, 0.75) 40%, rgba(28, 18, 10, 0.35) 65%, rgba(28, 18, 10, 0.1) 100%);
+  }
+}
+.hero__content {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .hero__content {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (min-width: 1024px) {
+  .hero__content {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: 0;
+    padding-left: 48px;
+  }
+}
+.hero__eyebrow {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #7EC8D8;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  font-size: 0.5625rem;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero__eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #E03030;
+  transform: rotate(45deg);
+}
+@media (min-width: 768px) {
+  .hero__eyebrow {
+    font-size: 0.625rem;
+  }
+}
+.hero__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(2rem, 5vw + 0.5rem, 3.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+.hero__title em {
+  font-style: normal;
+  color: #E03030;
+  position: relative;
+}
+.hero__title em::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #E03030;
+}
+.hero__lead {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(250, 248, 244, 0.9);
+  line-height: 1.9;
+  margin-bottom: 48px;
+  max-width: 480px;
+  line-height: 1.9;
+}
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .hero__cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.hero__scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(250, 248, 244, 0.6);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.hero__scroll:hover {
+  color: #FAF8F4;
+}
+.hero__scroll:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+.hero__scroll::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(250, 248, 244, 0.6), transparent);
+  animation: scroll-line 1.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll::after {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+@keyframes scroll-line {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.2);
+  }
+}
+.empathy {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .empathy {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.empathy {
+  background: #FAF8F4;
+  position: relative;
+}
+.empathy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../assets/img/pattern.png");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.empathy__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .empathy__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.empathy__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .empathy__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .empathy__layout {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+.empathy__intro {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  margin-bottom: 32px;
+  line-height: 1.9;
+}
+.empathy__worries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin-bottom: 48px;
+}
+.empathy__worry-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #F0EBE1;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+}
+.empathy__worry-item::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  background: #E03030;
+  transform: rotate(45deg);
+  margin-top: 0.35em;
+}
+.empathy__answer {
+  padding: 24px 32px;
+  background: #FFFFFF;
+  border-left: 4px solid #4E7C56;
+  border: 2px solid #2C1F14;
+  border-left-width: 4px;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+}
+.empathy__answer p {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+.empathy__answer p strong {
+  color: #4E7C56;
+  font-family: "DotGothic16", monospace;
+}
+.empathy__characters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+.empathy__char {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.empathy__char img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  background: #F0EBE1;
+  display: block;
+}
+.empathy__char:nth-child(1) img {
+  max-width: 130px;
+}
+.empathy__char:nth-child(2) img {
+  max-width: 110px;
+}
+.empathy__char:nth-child(3) img {
+  max-width: 120px;
+}
+.empathy__char:nth-child(4) img {
+  max-width: 125px;
+}
+
+.services {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .services {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.services {
+  background: #F0EBE1;
+  position: relative;
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+.services__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .services__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.journey {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .journey {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.journey {
+  background: #FAF8F4;
+}
+.journey__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .journey__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.journey__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .journey__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .journey__steps {
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+  }
+}
+.journey__connector {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .journey__connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B6340;
+    font-family: "Press Start 2P", monospace;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    padding-top: 48px;
+  }
+}
+
+.journey-step {
+  flex: 1;
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.journey-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.75rem;
+  color: #FFFFFF;
+  background: #E03030;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.journey-step__icon {
+  margin-bottom: 12px;
+}
+.journey-step__icon svg {
+  width: 32px;
+  height: 32px;
+}
+.journey-step__title {
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+.journey-step__text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin-bottom: 0;
+  flex: 1;
+}
+.journey-step:nth-child(1) {
+  border-top: 4px solid #E03030;
+}
+.journey-step:nth-child(3) {
+  border-top: 4px solid #8B6340;
+}
+.journey-step:nth-child(5) {
+  border-top: 4px solid #4E7C56;
+}
+.journey-step:nth-child(7) {
+  border-top: 4px solid #7EC8D8;
+}
+
+.cases {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .cases {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.cases {
+  background: #F0EBE1;
+  position: relative;
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+.cases__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .cases__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.cases__trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+@media (min-width: 768px) {
+  .cases__trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cases__trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.cases__trust-item {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cases__trust-item .trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #F0EBE1;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  flex-shrink: 0;
+}
+.cases__trust-item .trust-icon svg {
+  width: 28px;
+  height: 28px;
+}
+.cases__trust-item .trust-title {
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+}
+.cases__trust-item .trust-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+.cases__sub-heading {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: #2C1F14;
+  text-align: center;
+  margin-bottom: 32px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.cases__stories {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .cases__stories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cases__stories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.cases__stories-note {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  text-align: center;
+  margin-top: 24px;
+}
+.cases__stories-note em {
+  font-style: normal;
+  font-family: "DotGothic16", monospace;
+}
+.cases__affiliations {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 2px dashed rgba(44, 31, 20, 0.25);
+  text-align: center;
+}
+.cases__affiliations p {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+.cases__affiliations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 16px;
+  list-style: none;
+}
+.cases__affiliations-item {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #2C1F14;
+  background: #F0EBE1;
+  border: 2px solid #8B6340;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  padding: 8px 16px;
+  white-space: nowrap;
+  min-width: 200px;
+  text-align: center;
+}
+
+.team {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .team {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.team {
+  background: #FAF8F4;
+}
+.team__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .team__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.team__message {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .team__message {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.team__message {
+  max-width: 780px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.team__message blockquote {
+  font-family: "DotGothic16", monospace;
+  font-size: 1.125rem;
+  color: #2C1F14;
+  line-height: 1.8;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 48px 32px;
+  background: #FFFFFF;
+  position: relative;
+  margin: 24px 0;
+}
+@media (min-width: 768px) {
+  .team__message blockquote {
+    font-size: 1.25rem;
+    padding: 64px 80px;
+  }
+}
+.team__message blockquote::before {
+  content: '"';
+  font-family: "Press Start 2P", monospace;
+  font-size: 2rem;
+  color: #E03030;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  line-height: 1;
+}
+.team__message blockquote p {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.team__message blockquote p:last-child {
+  margin-bottom: 0;
+}
+.team__message blockquote footer {
+  margin-top: 24px;
+  text-align: right;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: #5C4230;
+}
+.team__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.team__cta {
+  text-align: center;
+  margin-top: 64px;
+}
+
+.faq {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .faq {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.faq {
+  background: #F0EBE1;
+  position: relative;
+}
+.faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../assets/img/pattern.png");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+.faq__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .faq__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.faq__inner {
+  max-width: 840px;
+}
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+.faq__more {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  overflow: hidden;
+}
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(0.8125rem, 3.4vw, 1.0625rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .faq-item__question {
+    padding: 24px 32px;
+    font-size: 1rem;
+  }
+}
+.faq-item__question:hover {
+  background: #F0EBE1;
+}
+.faq-item__question:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  outline-offset: -2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__question {
+    transition: none;
+  }
+}
+.faq-item__q-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #E03030;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #FFFFFF;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.faq-item__q-text {
+  flex: 1;
+}
+.faq-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: 2px solid #2C1F14;
+  background: #F0EBE1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: transform 0.2s ease;
+  font-family: monospace;
+  font-size: 1.25rem;
+  color: #2C1F14;
+  line-height: 1;
+}
+.faq-item__icon::before {
+  content: "+";
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__icon {
+    transition: none;
+  }
+}
+.faq-item__question[aria-expanded=true] {
+  background: #F0EBE1;
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.2);
+}
+.faq-item__question[aria-expanded=true] .faq-item__icon {
+  transform: rotate(45deg);
+}
+.faq-item__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__answer {
+    transition: none;
+  }
+}
+.faq-item__answer.is-open {
+  grid-template-rows: 1fr;
+}
+.faq-item__answer-inner {
+  overflow: hidden;
+}
+.faq-item__a-content {
+  display: flex;
+  gap: 16px;
+  padding: 24px 32px;
+  padding-left: calc(32px + 28px + 16px);
+}
+.faq-item__a-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #4E7C56;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #FFFFFF;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-left: calc(-28px - 16px);
+  position: relative;
+  left: calc(-32px + 16px);
+}
+.faq-item__a-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin-bottom: 0;
+  padding-left: calc(28px + 16px);
+}
+
+.news {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .news {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.news {
+  background: #FAF8F4;
+}
+.news__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .news__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.news__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .news__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .news__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.news__more {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.cta-band {
+  background: #2C1F14;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #E03030;
+  border-bottom: 4px solid #E03030;
+}
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(250, 248, 244, 0.05) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+.cta-band::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: #E03030;
+  transform: rotate(45deg);
+  opacity: 0.2;
+}
+.cta-band__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .cta-band__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.cta-band__inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-band__eyebrow {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #7EC8D8;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  font-size: 0.5625rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.cta-band__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  font-weight: 700;
+  color: #FAF8F4;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.cta-band__sub {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(250, 248, 244, 0.8);
+  line-height: 1.9;
+  margin-bottom: 48px;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-band__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .cta-band__cta {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.cta-band__email {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: rgba(250, 248, 244, 0.6);
+  margin-top: 16px;
+}
+.cta-band__email a {
+  color: #7EC8D8;
+  text-underline-offset: 3px;
+}
+.cta-band__email a:hover {
+  color: #FAF8F4;
+}
+.cta-band__email a:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+.page-hero {
+  position: relative;
+  background-color: #F0EBE1;
+  border-bottom: 3px solid #2C1F14;
+  overflow: hidden;
+}
+.page-hero__pattern {
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.07) 1px, transparent 1px);
+  background-size: 8px 8px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #8B6340;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(to right, #E03030 0, #E03030 6px, transparent 6px, transparent 10px);
+  z-index: 2;
+}
+.page-hero__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .page-hero__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .page-hero__inner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+.page-hero__eyebrow {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #8B6340;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+  display: block;
+}
+@media (min-width: 768px) {
+  .page-hero__eyebrow {
+    font-size: 0.6875rem;
+  }
+}
+.page-hero__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.page-hero__lead {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  max-width: 660px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.9;
+}
+
+.content-block {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .content-block {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.content-block:nth-child(odd) {
+  background-color: #FAF8F4;
+}
+.content-block:nth-child(even) {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.15);
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.15);
+}
+.content-block__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .content-block__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.service-overview {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .service-overview {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.service-overview {
+  background-color: #FAF8F4;
+}
+.service-overview__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .service-overview__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.service-overview__inner {
+  display: grid;
+  gap: 64px;
+}
+@media (min-width: 1024px) {
+  .service-overview__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+.service-overview__lead {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.9;
+  max-width: 660px;
+}
+.service-overview__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.service-overview__point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+}
+.service-overview__point::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #E03030;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.service-features {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .service-features {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.service-features {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.15);
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.15);
+}
+.service-features__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .service-features__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.service-features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .service-features__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.service-features__card {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+.service-features__card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-features__card:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.service-features__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #F0EBE1;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  margin-bottom: 16px;
+}
+.service-features__icon img {
+  width: 32px;
+  height: 32px;
+}
+.service-features__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 700;
+  color: #2C1F14;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.service-features__text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.service-target {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .service-target {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.service-target {
+  background-color: #FAF8F4;
+  position: relative;
+}
+.service-target::before {
+  content: "";
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.service-target__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .service-target__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.service-target__inner {
+  position: relative;
+  z-index: 1;
+}
+.service-target__list {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .service-target__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.service-target__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  padding: 24px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+}
+.service-target__item::before {
+  content: "✓";
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  color: #4E7C56;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.service-target__company-note {
+  padding-top: 48px;
+}
+.service-target__note {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  color: #5C4230;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.service-flow {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .service-flow {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.service-flow {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.15);
+}
+.service-flow__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .service-flow__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.service-flow__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (min-width: 768px) {
+  .service-flow__steps {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+.service-flow__step {
+  flex: 1;
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  padding: 24px;
+  position: relative;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.service-flow__step-number {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5625rem;
+  color: #FFFFFF;
+  background: #E03030;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+.service-flow__step-title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 700;
+  color: #2C1F14;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.service-flow__step-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin: 0;
+}
+.service-flow__connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #8B6340;
+  opacity: 0.6;
+  padding: 8px;
+  writing-mode: horizontal-tb;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .service-flow__connector {
+    transform: none;
+    padding: 12px 0;
+    align-self: center;
+  }
+}
+
+.service-related {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .service-related {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.service-related {
+  background-color: #FAF8F4;
+  border-top: 3px solid #2C1F14;
+}
+.service-related__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .service-related__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.service-related__grid {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .service-related__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-vision {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .about-vision {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.about-vision {
+  background-color: #FAF8F4;
+  position: relative;
+}
+.about-vision::before {
+  content: "";
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.about-vision__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .about-vision__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.about-vision__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-vision__blockquote {
+  margin: 0;
+  padding: 48px 32px;
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  border-left: 4px solid #E03030;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  position: relative;
+}
+.about-vision__blockquote::before {
+  content: "❝";
+  font-family: serif;
+  font-size: 4rem;
+  color: #E03030;
+  opacity: 0.15;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+.about-vision__blockquote p {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin-bottom: 1.2em;
+  padding-left: 16px;
+}
+.about-vision__blockquote p:last-of-type {
+  margin-bottom: 24px;
+}
+.about-vision__blockquote footer {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: #5C4230;
+  padding-left: 16px;
+}
+.about-vision__blockquote footer cite {
+  font-style: normal;
+  font-weight: 700;
+  color: #2C1F14;
+}
+
+.about-story {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .about-story {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.about-story {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.2);
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.2);
+}
+.about-story__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .about-story__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.about-story__inner {
+  display: grid;
+  gap: 64px;
+}
+@media (min-width: 1024px) {
+  .about-story__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+.about-story__text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+}
+.about-story__text p {
+  margin-bottom: 1.4em;
+}
+.about-story__text p:last-child {
+  margin-bottom: 0;
+}
+.about-story__illustration {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .about-story__illustration {
+    justify-content: flex-end;
+  }
+}
+.about-story__char img {
+  width: 100px;
+  height: auto;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  background: #FAF8F4;
+}
+
+.about-values {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .about-values {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.about-values {
+  background-color: #FAF8F4;
+}
+.about-values__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .about-values__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.about-values__grid {
+  display: grid;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .about-values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .about-values__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.about-values__item {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+.about-values__item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-values__item:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.about-values__number {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5625rem;
+  color: #E03030;
+  display: block;
+  margin-bottom: 8px;
+}
+.about-values__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  font-weight: 700;
+  color: #2C1F14;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.about-values__title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #E03030;
+  transform: rotate(45deg);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.about-values__text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.about-team {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .about-team {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.about-team {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.2);
+}
+.about-team__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .about-team__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.about-team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .about-team__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-company {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .about-company {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.about-company {
+  background-color: #FAF8F4;
+}
+.about-company__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .about-company__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.about-company__inner {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-company__table {
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  overflow: hidden;
+}
+.about-company__row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.15);
+}
+.about-company__row:last-child {
+  border-bottom: none;
+}
+@media (max-width: 479px) {
+  .about-company__row {
+    grid-template-columns: 1fr;
+  }
+}
+.about-company__term {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #2C1F14;
+  background: #F0EBE1;
+  padding: 16px 24px;
+  border-right: 2px solid rgba(44, 31, 20, 0.15);
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 479px) {
+  .about-company__term {
+    border-right: none;
+    border-bottom: 2px dashed rgba(44, 31, 20, 0.15);
+  }
+}
+.about-company__desc {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  line-height: 1.9;
+}
+
+.contact-form-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .contact-form-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.contact-form-section {
+  background-color: #FAF8F4;
+  position: relative;
+}
+.contact-form-section::before {
+  content: "";
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.contact-form-section__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .contact-form-section__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.contact-form-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-form-section__intro {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin-bottom: 48px;
+  max-width: 660px;
+}
+.contact-form-section__intro strong {
+  font-weight: 700;
+  color: #2C1F14;
+}
+.contact-form-section__email-note {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  color: #5C4230;
+  margin-top: 24px;
+  text-align: center;
+}
+.contact-form-section__email-note a {
+  color: #8B6340;
+  font-weight: 700;
+}
+
+.contact-form {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.25);
+  padding: 48px 32px;
+}
+@media (min-width: 768px) {
+  .contact-form {
+    padding: 80px 80px;
+  }
+}
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.contact-form__group:last-of-type {
+  margin-bottom: 0;
+}
+.contact-form__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.contact-form__required {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #E03030;
+  border: 2px solid rgb(183.3428571429, 27.4571428571, 27.4571428571);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  padding: 1px 8px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.contact-form__optional {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.6875rem;
+  color: #5C4230;
+  background: transparent;
+  border: 2px solid rgba(44, 31, 20, 0.3);
+  padding: 1px 8px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.contact-form__input, .contact-form__textarea, .contact-form__select {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  background: #FAF8F4;
+  border: 3px solid #2C1F14;
+  padding: 16px 24px;
+  width: 100%;
+  transition: all 0.15s ease;
+  line-height: 1.9;
+  appearance: none;
+}
+.contact-form__input:focus-visible, .contact-form__textarea:focus-visible, .contact-form__select:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+  background: #FFFFFF;
+  border-color: #E03030;
+  outline-offset: 0;
+}
+.contact-form__input.is-error, .contact-form__textarea.is-error, .contact-form__select.is-error {
+  border-color: #E03030;
+  background: rgba(224, 48, 48, 0.04);
+}
+.contact-form__input.is-valid, .contact-form__textarea.is-valid, .contact-form__select.is-valid {
+  border-color: #4E7C56;
+}
+.contact-form__input::placeholder, .contact-form__textarea::placeholder, .contact-form__select::placeholder {
+  color: rgba(44, 31, 20, 0.35);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 160px;
+  line-height: 1.9;
+}
+@media (min-width: 768px) {
+  .contact-form__textarea {
+    min-height: 200px;
+  }
+}
+.contact-form__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232C1F14' d='M0 0h4v4H0zm4 4h4v4H4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px 8px;
+  padding-right: 64px;
+  cursor: pointer;
+}
+.contact-form__helper {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  color: #5C4230;
+  line-height: 1.8;
+}
+.contact-form__error {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #E03030;
+  font-weight: 700;
+  min-height: 1.4em;
+  display: block;
+}
+.contact-form__error:empty {
+  opacity: 0;
+}
+.contact-form__error:not(:empty) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 1;
+}
+.contact-form__error:not(:empty)::before {
+  content: "！";
+  font-family: "DotGothic16", monospace;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #E03030;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+.contact-form__submit {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.contact-form__submit .btn {
+  width: 100%;
+  justify-content: center;
+}
+@media (min-width: 480px) {
+  .contact-form__submit .btn {
+    width: auto;
+    min-width: 240px;
+  }
+}
+.contact-form__note {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.875rem;
+  color: #5C4230;
+  text-align: center;
+  line-height: 1.9;
+  margin: 0;
+}
+.contact-form__note a {
+  color: #8B6340;
+  font-weight: 500;
+}
+
+.contact-fieldset {
+  border: 2px dashed rgba(44, 31, 20, 0.2);
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.contact-fieldset:last-of-type {
+  margin-bottom: 0;
+}
+.contact-fieldset__legend {
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C1F14;
+  padding: 0 8px;
+  border-bottom: 2px solid #8B6340;
+  padding-bottom: 4px;
+}
+
+.contact-form__radio-group,
+.contact-form__checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 8px;
+}
+
+.contact-form__radio-label,
+.contact-form__checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.contact-form__radio-label input[type=radio],
+.contact-form__radio-label input[type=checkbox],
+.contact-form__checkbox-label input[type=radio],
+.contact-form__checkbox-label input[type=checkbox] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #2C1F14;
+  background: #FAF8F4;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+}
+.contact-form__radio-label input[type=radio]:checked,
+.contact-form__radio-label input[type=checkbox]:checked,
+.contact-form__checkbox-label input[type=radio]:checked,
+.contact-form__checkbox-label input[type=checkbox]:checked {
+  background: #E03030;
+  border-color: rgb(183.3428571429, 27.4571428571, 27.4571428571);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='%23fff' d='M0 4h4v2H0zm4 2h2v2H4zm2-4h2v4H6zm2-2h4v2H8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+.contact-form__radio-label input[type=radio]:focus-visible,
+.contact-form__radio-label input[type=checkbox]:focus-visible,
+.contact-form__checkbox-label input[type=radio]:focus-visible,
+.contact-form__checkbox-label input[type=checkbox]:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+}
+.contact-form__radio-label input[type=radio],
+.contact-form__checkbox-label input[type=radio] {
+  border-radius: 50%;
+}
+.contact-form__radio-label input[type=radio]:checked,
+.contact-form__checkbox-label input[type=radio]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Crect fill='%23fff' x='2' y='2' width='4' height='4'/%3E%3C/svg%3E");
+  background-size: 8px 8px;
+}
+
+.prose-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .prose-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.prose-section {
+  background-color: #FAF8F4;
+}
+.prose-section--beige {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.15);
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.15);
+}
+.prose-section__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .prose-section__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.prose {
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+}
+.prose__meta {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  border-left: 4px solid #8B6340;
+  padding: 8px 16px;
+  background: #F0EBE1;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+.prose h2 {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1.25rem, 3.5vw, 1.625rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-top: 80px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.3);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h3 {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 4px solid #E03030;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.prose h4 {
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.prose p {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+.prose a {
+  color: #8B6340;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: all 0.15s ease;
+}
+.prose a:hover {
+  color: #E03030;
+  text-decoration-thickness: 2px;
+}
+.prose a:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.prose ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+  padding-left: 0;
+}
+.prose ul li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  background: #E03030;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.prose ul li ul {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.prose ul li ul li::before {
+  background: #8B6340;
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+}
+.prose ol {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  counter-reset: prose-counter;
+}
+.prose ol li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+  counter-increment: prose-counter;
+}
+.prose ol li::before {
+  content: counter(prose-counter);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5625rem;
+  color: #FFFFFF;
+  background: #2C1F14;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  line-height: 1;
+}
+.prose dl {
+  margin-bottom: 32px;
+  border: 2px solid rgba(44, 31, 20, 0.2);
+}
+.prose dt {
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C1F14;
+  background: #F0EBE1;
+  border-bottom: 2px solid rgba(44, 31, 20, 0.15);
+  padding: 12px 24px;
+  line-height: 1.35;
+}
+.prose dt::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #E03030;
+  transform: rotate(45deg);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.prose dd {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+  padding: 16px 24px;
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.1);
+  margin-left: 0;
+}
+.prose dd:last-child {
+  border-bottom: none;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #2C1F14;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  color: #2C1F14;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 768px) {
+  .prose table {
+    display: table;
+    overflow-x: visible;
+  }
+}
+.prose table thead {
+  background: #2C1F14;
+  color: #FAF8F4;
+}
+.prose table thead th {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border: 2px solid rgba(250, 248, 244, 0.2);
+  text-align: left;
+  white-space: nowrap;
+}
+.prose table tbody tr:nth-child(even) {
+  background: #F0EBE1;
+}
+.prose table tbody tr:nth-child(odd) {
+  background: #FAF8F4;
+}
+.prose table tbody tr:hover {
+  background: rgba(78, 124, 86, 0.08);
+}
+.prose table tbody td {
+  padding: 12px 24px;
+  border: 2px solid rgba(44, 31, 20, 0.15);
+  vertical-align: top;
+}
+.prose table tbody th {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2C1F14;
+  background: #F0EBE1;
+  padding: 12px 24px;
+  border: 2px solid rgba(44, 31, 20, 0.2);
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.prose__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 2px solid rgba(44, 31, 20, 0.1);
+  margin-bottom: 32px;
+}
+.prose__table-wrap table {
+  margin-bottom: 0;
+}
+.prose blockquote {
+  margin: 32px 0;
+  padding: 24px 32px;
+  border-left: 4px solid #8B6340;
+  background: #F0EBE1;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+}
+.prose blockquote p {
+  margin-bottom: 12px;
+}
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+.prose blockquote cite {
+  display: block;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  font-style: normal;
+  margin-top: 12px;
+}
+.prose strong {
+  font-weight: 700;
+  color: #2C1F14;
+}
+.prose em {
+  font-style: italic;
+  color: #2C1F14;
+}
+.prose code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.875em;
+  background: #F0EBE1;
+  border: 2px solid rgba(44, 31, 20, 0.2);
+  padding: 0 8px;
+  line-height: inherit;
+}
+.prose hr {
+  border: none;
+  height: 2px;
+  background: repeating-linear-gradient(to right, #8B6340 0, #8B6340 6px, transparent 6px, transparent 10px);
+  margin: 64px 0;
+  opacity: 0.3;
+}
+.prose__note {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  color: #5C4230;
+  line-height: 1.9;
+  padding: 16px 24px;
+  background: #F0EBE1;
+  border: 2px dashed rgba(44, 31, 20, 0.3);
+  margin-bottom: 24px;
+}
+
+.archive {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .archive {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.archive {
+  background-color: #FAF8F4;
+}
+.archive__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .archive__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.archive__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .archive__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .archive__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.archive__filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.2);
+}
+.archive__empty {
+  text-align: center;
+  padding: 80px 24px;
+  font-family: "DotGothic16", monospace;
+  font-size: 1rem;
+  color: #5C4230;
+}
+
+.article-card {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+.article-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  .article-card:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.article-card__img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #F0EBE1;
+  border-bottom: 2px solid #2C1F14;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.article-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-card__img--placeholder {
+  position: relative;
+}
+.article-card__img--placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(44, 31, 20, 0.06) 8px, rgba(44, 31, 20, 0.06) 16px);
+}
+.article-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.article-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.article-card__date {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  white-space: nowrap;
+}
+.article-card__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(0.9375rem, 2.5vw, 1.0625rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.article-card__excerpt {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.article-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #8B6340;
+  text-decoration: none;
+  border-bottom: 2px solid #8B6340;
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: all 0.15s ease;
+}
+.article-card__link::after {
+  content: "→";
+  font-family: monospace;
+}
+.article-card__link:hover {
+  color: #E03030;
+  border-color: #E03030;
+}
+.article-card__link:focus-visible {
+  outline: 3px solid #E03030;
+  outline-offset: 2px;
+}
+
+.tag {
+  display: inline-block;
+  background: #E03030;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(192.2142857143, 28.7857142857, 28.7857142857);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  font-size: 0.875rem;
+  cursor: default;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.tag--brown {
+  display: inline-block;
+  background: #8B6340;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(104.078817734, 74.1280788177, 47.921182266);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.tag--green {
+  display: inline-block;
+  background: #4E7C56;
+  color: #FFFFFF;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid rgb(58.3069306931, 92.6930693069, 64.2871287129);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.tag--outline {
+  background: transparent;
+  color: #2C1F14;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.tag--outline:hover {
+  background: #F0EBE1;
+}
+.tag--outline:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+}
+.tag--active {
+  background: #2C1F14;
+  color: #FAF8F4;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  line-height: 1.4;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pagination {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+.pagination__item {
+  display: inline-flex;
+}
+.pagination__link, .pagination__current, .pagination__prev, .pagination__next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  transition: all 0.15s ease;
+}
+.pagination__link {
+  background: #FFFFFF;
+  color: #2C1F14;
+}
+.pagination__link:hover {
+  background: #F0EBE1;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+}
+.pagination__link:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pagination__link:hover {
+    transform: none;
+    box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.pagination__current {
+  background: #E03030;
+  color: #FFFFFF;
+  border-color: #E03030;
+  cursor: default;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+}
+.pagination__prev, .pagination__next {
+  background: #FFFFFF;
+  color: #2C1F14;
+  gap: 4px;
+}
+.pagination__prev:hover, .pagination__next:hover {
+  background: #F0EBE1;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+}
+.pagination__prev:focus-visible, .pagination__next:focus-visible {
+  outline: 3px solid #8B6340;
+  outline-offset: 2px;
+  outline-offset: 2px;
+}
+.pagination__prev[aria-disabled=true], .pagination__prev:disabled, .pagination__next[aria-disabled=true], .pagination__next:disabled {
+  background: #F0EBE1;
+  color: #5C4230;
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+}
+.pagination__prev[aria-disabled=true]:hover, .pagination__prev:disabled:hover, .pagination__next[aria-disabled=true]:hover, .pagination__next:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pagination__prev:hover, .pagination__next:hover {
+    transform: none;
+    box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+}
+
+.lp-problem {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .lp-problem {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.lp-problem {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.15);
+  border-bottom: 2px dashed rgba(44, 31, 20, 0.15);
+  position: relative;
+}
+.lp-problem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+.lp-problem__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-problem__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-problem__inner {
+  position: relative;
+  z-index: 1;
+}
+.lp-problem__list {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .lp-problem__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.lp-problem__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  padding: 24px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: #2C1F14;
+  line-height: 1.9;
+}
+.lp-problem__item::before {
+  content: "?";
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  color: #FFFFFF;
+  background: #8B6340;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  line-height: 1;
+}
+.lp-problem__cta-note {
+  text-align: center;
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: #2C1F14;
+  margin-top: 48px;
+  padding: 24px;
+  border: 3px solid #2C1F14;
+  background: #FAF8F4;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.35;
+}
+.lp-problem__figure {
+  margin: 0 0 32px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #2C1F14;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  overflow: hidden;
+  background: #F0EBE1;
+}
+.lp-problem__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lp-solution {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .lp-solution {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.lp-solution {
+  background-color: #FAF8F4;
+}
+.lp-solution__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-solution__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-solution__lead {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.9;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 64px;
+}
+.lp-solution__points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .lp-solution__points {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .lp-solution__points {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.lp-solution__point {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+.lp-solution__point:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-solution__point:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.lp-solution__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: #F0EBE1;
+  border: 3px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  margin-bottom: 16px;
+}
+.lp-solution__icon svg, .lp-solution__icon img {
+  width: 28px;
+  height: 28px;
+}
+.lp-solution__point-title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 700;
+  color: #2C1F14;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.lp-solution__point-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.lp-merit {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .lp-merit {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.lp-merit {
+  background-color: #F0EBE1;
+  border-top: 2px dashed rgba(44, 31, 20, 0.15);
+}
+.lp-merit__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-merit__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-merit__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .lp-merit__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .lp-merit__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.lp-merit__card {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  transition: all 0.2s ease;
+}
+.lp-merit__card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.25);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-merit__card:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+.lp-merit__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #F0EBE1;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  flex-shrink: 0;
+}
+.lp-merit__icon svg, .lp-merit__icon img {
+  width: 28px;
+  height: 28px;
+}
+.lp-merit__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  font-weight: 700;
+  color: #2C1F14;
+  line-height: 1.35;
+}
+.lp-merit__text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.lp-voice {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .lp-voice {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.lp-voice {
+  background-color: #FAF8F4;
+  position: relative;
+}
+.lp-voice::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(44, 31, 20, 0.03) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+.lp-voice__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-voice__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-voice__inner {
+  position: relative;
+  z-index: 1;
+}
+.lp-voice__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .lp-voice__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .lp-voice__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.lp-voice__card {
+  background: #FFFFFF;
+  border: 3px solid #2C1F14;
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+.lp-voice__quote {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2C1F14;
+  line-height: 1.9;
+  line-height: 1.9;
+  margin: 0;
+  padding-left: 16px;
+  border-left: 4px solid #E03030;
+  font-style: italic;
+}
+.lp-voice__source {
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  padding-top: 12px;
+  border-top: 2px dashed rgba(44, 31, 20, 0.2);
+  line-height: 1.8;
+}
+.lp-voice__source-label {
+  display: inline-block;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5625rem;
+  color: #FFFFFF;
+  background: #4E7C56;
+  border: 2px solid #2C1F14;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+}
+.lp-voice__note {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #5C4230;
+  line-height: 1.9;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.lp-contact-note {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-contact-note {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-contact-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+.lp-contact-note__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  color: #5C4230;
+  line-height: 1.5;
+}
+.lp-contact-note__item::before {
+  content: "✓";
+  color: #4E7C56;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cta-band .lp-contact-note__item {
+  color: #FAF8F4;
+}
+.cta-band .lp-contact-note__item::before {
+  color: #7FB389;
+}
+
+.lp-hero__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-hero__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .lp-hero__inner {
+    flex-direction: row;
+    gap: 64px;
+    align-items: center;
+  }
+}
+.lp-hero__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.lp-hero__image {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 767px) {
+  .lp-hero__image {
+    width: 100%;
+  }
+}
+.lp-hero__image-frame {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 3px solid #8B6340;
+  box-shadow: 6px 6px 0 rgba(44, 31, 20, 0.25);
+  overflow: hidden;
+  background: #F0EBE1;
+}
+.lp-hero__image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(12px - 3px);
+}
+
+.lp-hero--cinematic {
+  position: relative;
+  isolation: isolate;
+  background-color: #2C1F14;
+}
+.lp-hero--cinematic::before {
+  content: none;
+}
+.lp-hero--cinematic {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 78svh;
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic {
+    min-height: 70vh;
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .lp-hero--cinematic {
+    min-height: clamp(560px, 76vh, 760px);
+  }
+}
+.lp-hero--cinematic .lp-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+}
+.lp-hero--cinematic .lp-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  display: block;
+}
+@media (max-width: 767px) {
+  .lp-hero--cinematic .lp-hero__bg-img {
+    object-position: center 28%;
+  }
+}
+.lp-hero--cinematic .lp-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(20, 14, 8, 0.92) 0%, rgba(20, 14, 8, 0.78) 30%, rgba(20, 14, 8, 0.55) 55%, rgba(20, 14, 8, 0.2) 100%);
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic .lp-hero__scrim {
+    background: linear-gradient(to right, rgba(20, 14, 8, 0.9) 0%, rgba(20, 14, 8, 0.8) 38%, rgba(20, 14, 8, 0.3) 70%, rgba(20, 14, 8, 0.08) 100%);
+  }
+}
+.lp-hero--cinematic .lp-hero__pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 8px 8px;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.lp-hero--cinematic .lp-hero__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-hero--cinematic .lp-hero__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-hero--cinematic .lp-hero__inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic .lp-hero__inner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+.lp-hero--cinematic .breadcrumb--on-dark {
+  margin-bottom: 0;
+}
+.lp-hero--cinematic .lp-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic .lp-hero__content {
+    max-width: 62%;
+  }
+}
+@media (min-width: 1024px) {
+  .lp-hero--cinematic .lp-hero__content {
+    max-width: 640px;
+  }
+}
+.lp-hero--cinematic .lp-hero__eyebrow {
+  color: #E03030;
+  margin-bottom: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+.lp-hero--cinematic .lp-hero__title {
+  font-family: "DotGothic16", monospace;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: clamp(2.125rem, 6.4vw, 4.25rem);
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.55);
+}
+.lp-hero--cinematic .lp-hero__title-accent {
+  color: #E03030;
+}
+.lp-hero--cinematic .lp-hero__lead {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.9;
+  line-height: 1.9;
+  max-width: 42ch;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic .lp-hero__lead {
+    font-size: 1.0625rem;
+  }
+}
+.lp-hero--cinematic .lp-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+@media (max-width: 519px) {
+  .lp-hero--cinematic .lp-hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lp-hero--cinematic .lp-hero__cta .btn {
+    width: 100%;
+  }
+}
+.lp-hero--cinematic .lp-hero__note {
+  justify-content: flex-start;
+  padding-left: 0;
+  padding-right: 0;
+}
+.lp-hero--cinematic .lp-hero__note .lp-contact-note__item {
+  color: #FAF8F4;
+}
+.lp-hero--cinematic .lp-hero__note .lp-contact-note__item::before {
+  color: #7FB389;
+}
+.lp-hero--cinematic .lp-hero__scroll {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic .lp-hero__scroll {
+    display: inline-flex;
+  }
+}
+.lp-hero--cinematic .lp-hero__scroll:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+.lp-hero--cinematic .lp-hero__scroll-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.85);
+}
+.lp-hero--cinematic .lp-hero__scroll-icon {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  transform: rotate(45deg);
+  animation: lp-hero-bounce 1.6s ease-in-out infinite;
+}
+@keyframes lp-hero-bounce {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(45deg) translate(3px, 3px);
+  }
+}
+.lp-hero--cinematic .lp-hero__diamond {
+  position: absolute;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  background: #E03030;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  pointer-events: none;
+  display: none;
+}
+@media (min-width: 768px) {
+  .lp-hero--cinematic .lp-hero__diamond {
+    display: block;
+  }
+}
+.lp-hero--cinematic .lp-hero__diamond--1 {
+  top: 18%;
+  right: 12%;
+}
+.lp-hero--cinematic .lp-hero__diamond--2 {
+  top: 30%;
+  right: 8%;
+  width: 8px;
+  height: 8px;
+  opacity: 0.7;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-hero--cinematic .lp-hero__scroll-icon {
+    animation: none;
+  }
+}
+
+.lp-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #E03030;
+  border-top: 3px solid #2C1F14;
+  box-shadow: 0 -3px 0 rgba(44, 31, 20, 0.2);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+}
+.lp-sticky-cta.is-visible {
+  transform: translateY(0);
+}
+.lp-sticky-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DotGothic16", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #2C1F14;
+  border: 2px solid #2C1F14;
+  box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  padding: 12px 24px;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: all 0.15s ease;
+}
+.lp-sticky-cta__btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
+}
+.lp-sticky-cta__btn:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-sticky-cta__btn:hover {
+    transform: none;
+    box-shadow: 3px 3px 0 rgba(44, 31, 20, 0.25);
+  }
+}
+@media (min-width: 768px) {
+  .lp-sticky-cta {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-sticky-cta {
+    transition: none;
+  }
+}
+
+@media (max-width: 767px) {
+  body.has-sticky-cta {
+    padding-bottom: 72px;
+  }
+}
+.lp-partner {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .lp-partner {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+.lp-partner {
+  background-color: #FAF8F4;
+  text-align: center;
+}
+.lp-partner__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .lp-partner__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+.lp-partner__title {
+  font-family: "DotGothic16", monospace;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 700;
+  color: #5C4230;
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+.lp-partner__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

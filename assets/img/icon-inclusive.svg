@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+  <!-- People / inclusive icon pixel-art style -->
+  <!-- Three person blocks -->
+  <rect x="2" y="6" width="6" height="6" fill="#8B6340" stroke="#2C1F14" stroke-width="2"/>
+  <rect x="13" y="4" width="6" height="6" fill="#E03030" stroke="#2C1F14" stroke-width="2"/>
+  <rect x="24" y="6" width="6" height="6" fill="#4E7C56" stroke="#2C1F14" stroke-width="2"/>
+  <!-- Bodies -->
+  <rect x="2" y="14" width="6" height="8" fill="#8B6340" stroke="#2C1F14" stroke-width="2"/>
+  <rect x="13" y="12" width="6" height="10" fill="#E03030" stroke="#2C1F14" stroke-width="2"/>
+  <rect x="24" y="14" width="6" height="8" fill="#4E7C56" stroke="#2C1F14" stroke-width="2"/>
+  <!-- Connection dots -->
+  <rect x="9" y="17" width="4" height="2" fill="#2C1F14"/>
+  <rect x="20" y="17" width="4" height="2" fill="#2C1F14"/>
+</svg>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  accessibility.html — アクセシビリティ方針
+  ============================================================
+  本方針は雛形です。公開前に法務・クライアント確認必須。
+  ============================================================
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アクセシビリティ方針 | 株式会社Zabuton</title>
+  <meta name="description" content="株式会社ZabutonはWCAG 2.1 AA準拠を目指し、障害のある方を含むすべての利用者がウェブサイトを快適にご利用いただけるよう取り組んでいます。">
+
+  <!-- Canonical -->
+  <!-- TODO: 本番公開前に正式URLへ更新すること -->
+  <link rel="canonical" href="https://zabuton.co.jp/accessibility/">
+
+  <!-- OGP / Twitter Card -->
+  <!-- TODO: 本番公開前に og:image の絶対URLを確認すること -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="アクセシビリティ方針 | 株式会社Zabuton">
+  <meta property="og:description" content="株式会社ZabutonはWCAG 2.1 AA準拠を目指し、すべての利用者がウェブサイトを快適にご利用いただけるよう取り組んでいます。">
+  <meta property="og:url" content="https://zabuton.co.jp/accessibility/">
+  <meta property="og:image" content="https://zabuton.co.jp/assets/img/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="アクセシビリティ方針 | 株式会社Zabuton">
+  <meta name="twitter:description" content="株式会社ZabutonはWCAG 2.1 AA準拠を目指し、すべての利用者がウェブサイトを快適にご利用いただけるよう取り組んでいます。">
+  <meta name="twitter:image" content="https://zabuton.co.jp/assets/img/ogp.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 構造化データ（WebPage + BreadcrumbList） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "アクセシビリティ方針 | 株式会社Zabuton",
+    "description": "株式会社ZabutonはWCAG 2.1 AA準拠を目指し、障害のある方を含むすべての利用者がウェブサイトを快適にご利用いただけるよう取り組んでいます。",
+    "url": "https://zabuton.co.jp/accessibility/",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "株式会社Zabuton",
+      "url": "https://zabuton.co.jp/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://zabuton.co.jp/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "アクセシビリティ方針",
+          "item": "https://zabuton.co.jp/accessibility/"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- スキップリンク (WCAG 2.4.1) -->
+  <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+
+  <!-- HEADER — header.html より転写。accessibility はグローバルナビの主項目に該当しないため aria-current は付与しない -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+
+      <a href="index.html" class="site-logo" aria-label="株式会社Zabuton — トップへ">
+        <img
+          src="assets/img/logo.svg"
+          alt="zabuton"
+          class="site-logo__img"
+          width="139"
+          height="38"
+        >
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <ul class="global-nav__list" role="list">
+          <li class="global-nav__item">
+            <button
+              class="global-nav__link"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="nav-services-dropdown"
+            >サービス</button>
+            <ul class="nav-dropdown" id="nav-services-dropdown" role="list">
+              <li class="nav-dropdown__item">
+                <a class="nav-dropdown__link" href="services-learning.html">プログラミング学習</a>
+              </li>
+              <li class="nav-dropdown__item">
+                <a class="nav-dropdown__link" href="services-job-support.html">就活準備・サポート</a>
+              </li>
+              <li class="nav-dropdown__item">
+                <a class="nav-dropdown__link" href="services-matching.html">企業とのマッチング</a>
+              </li>
+              <li class="nav-dropdown__item">
+                <a class="nav-dropdown__link" href="services-retention.html">就職後の定着支援</a>
+              </li>
+            </ul>
+          </li>
+          <li class="global-nav__item">
+            <a class="global-nav__link" href="about.html">私たちの想い</a>
+          </li>
+          <li class="global-nav__item">
+            <a class="global-nav__link" href="cases.html">実績・事例</a>
+          </li>
+          <li class="global-nav__item">
+            <a class="global-nav__link" href="column.html">コラム</a>
+          </li>
+          <li class="global-nav__item">
+            <a class="global-nav__link" href="faq.html">よくある質問</a>
+          </li>
+        </ul>
+        <a class="header-btob-link" href="for-facilities.html">事業者・企業の方へ</a>
+        <div class="global-nav__cta">
+          <a class="btn btn--primary" href="contact.html">お問い合わせ</a>
+        </div>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="メニューを開く"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav-drawer" id="nav-drawer" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="nav-drawer__list" role="list">
+      <li class="nav-drawer__item">
+        <button
+          class="nav-drawer__link"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="drawer-services-sub"
+        >サービス ▾</button>
+        <ul class="nav-drawer__sublist" id="drawer-services-sub" hidden role="list">
+          <li class="nav-drawer__subitem">
+            <a class="nav-drawer__sublink" href="services-learning.html">プログラミング学習</a>
+          </li>
+          <li class="nav-drawer__subitem">
+            <a class="nav-drawer__sublink" href="services-job-support.html">就活準備・サポート</a>
+          </li>
+          <li class="nav-drawer__subitem">
+            <a class="nav-drawer__sublink" href="services-matching.html">企業とのマッチング</a>
+          </li>
+          <li class="nav-drawer__subitem">
+            <a class="nav-drawer__sublink" href="services-retention.html">就職後の定着支援</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-drawer__item">
+        <a class="nav-drawer__link" href="about.html">私たちの想い</a>
+      </li>
+      <li class="nav-drawer__item">
+        <a class="nav-drawer__link" href="cases.html">実績・事例</a>
+      </li>
+      <li class="nav-drawer__item">
+        <a class="nav-drawer__link" href="column.html">コラム</a>
+      </li>
+      <li class="nav-drawer__item">
+        <a class="nav-drawer__link" href="faq.html">よくある質問</a>
+      </li>
+    </ul>
+    <div class="nav-drawer__footer">
+      <a class="btn btn--primary btn--full" href="contact.html">お問い合わせ</a>
+      <a class="nav-drawer__btob" href="for-facilities.html">事業者・企業の方へ</a>
+    </div>
+  </nav>
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero__pattern" aria-hidden="true"></div>
+      <div class="page-hero__inner">
+
+        <!-- パンくずナビ -->
+        <nav class="breadcrumb" aria-label="パンくず">
+          <ol class="breadcrumb__list"
+              itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li class="breadcrumb__item"
+                itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a class="breadcrumb__link" href="index.html" itemprop="item">
+                <span itemprop="name">ホーム</span>
+              </a>
+              <meta itemprop="position" content="1">
+              <span class="breadcrumb__separator" aria-hidden="true">›</span>
+            </li>
+            <li class="breadcrumb__item"
+                itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span class="breadcrumb__current" aria-current="page" itemprop="name">
+                アクセシビリティ方針
+              </span>
+              <meta itemprop="position" content="2">
+            </li>
+          </ol>
+        </nav>
+
+        <!-- 英字ラベル（装飾専用） -->
+        <span class="page-hero__eyebrow" aria-hidden="true">ACCESSIBILITY</span>
+
+        <!-- ページタイトル h1 -->
+        <h1 class="page-hero__title">アクセシビリティ方針</h1>
+
+        <!-- リードコピー -->
+        <p class="page-hero__lead">
+          株式会社Zabutonは、障害のある方を含むすべての利用者が快適にウェブサイトをご利用いただけるよう、アクセシビリティの継続的な改善に取り組んでいます。
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- PROSE コンテンツ本体 -->
+    <section class="prose-section" aria-labelledby="a11y-heading-1">
+      <div class="prose-section__inner">
+
+        <article class="prose">
+
+          <!--
+            最終更新日は公開前にクライアントと確認の上、確定日付に更新すること。
+          -->
+          <p class="prose__meta">最終更新日: （公開前に確定）</p>
+
+          <!--
+            本方針は雛形です。公開前に法務・クライアント確認必須。
+            実際の適合レベル・対象範囲・取り組み内容は
+            公開前のアクセシビリティ監査結果に基づいて更新すること。
+          -->
+
+          <h2 id="a11y-heading-1">基本方針</h2>
+          <p>
+            株式会社Zabuton（以下「当社」）は、IT×福祉の橋渡しを事業の中心に据え、
+            障害のある方の自分らしい働く未来の実現を支援しています。
+            このミッションと一貫して、当社のウェブサイトは利用者の障害の有無や
+            使用環境に関わらず、すべての方が平等に情報にアクセスできることを目指します。
+          </p>
+          <p>
+            アクセシビリティへの取り組みは法令対応にとどまらず、
+            当社の事業の本質として継続的に改善していきます。
+          </p>
+
+
+          <h2>目標とする適合レベル</h2>
+          <p>
+            当社は、W3C（World Wide Web Consortium）が策定した
+            ウェブアクセシビリティの国際規格である
+            <strong>WCAG 2.1（Web Content Accessibility Guidelines 2.1）の
+            適合レベル AA 準拠を目指します</strong>。
+          </p>
+          <p class="prose__note">
+            現時点では完全な準拠を保証するものではありません。
+            継続的な改善の中で達成水準を高めていきます。
+            問題を発見された場合はフィードバック窓口までご連絡ください。
+          </p>
+
+
+          <h2>主な取り組み</h2>
+
+          <h3>キーボード操作への対応</h3>
+          <p>
+            マウスを使用しない場合でも、キーボードのみで当サイトのすべての機能を操作できるよう設計しています。
+            Tab キー・Shift+Tab キー・Enter キー・Space キー・矢印キーによる操作に対応します。
+            また、ページ上部に「メインコンテンツへスキップ」リンクを設置し、
+            繰り返しのナビゲーション読み上げを省略できます。
+          </p>
+
+          <h3>色のコントラスト</h3>
+          <p>
+            本文テキストと背景の色のコントラスト比は WCAG 2.1 AA 基準（4.5:1 以上）を満たすよう設計しています。
+            ボタン・アイコン等の UI コンポーネントは 3:1 以上を確保します。
+            色だけで情報を伝えることはせず、テキスト・アイコン・形状を併用します。
+          </p>
+
+          <h3>代替テキストの提供</h3>
+          <p>
+            情報を伝える画像にはすべて適切な代替テキスト（alt 属性）を付与します。
+            装飾のみを目的とする画像は、スクリーンリーダーが読み上げないよう
+            空の alt 属性（<code>alt=""</code>）を設定します。
+          </p>
+
+          <h3>見出し構造</h3>
+          <p>
+            各ページに H1 は 1 つのみ設置し、H2 → H3 → H4 の順で階層的に見出しを構造化しています。
+            スクリーンリーダーのユーザーが見出しナビゲーションでページ内を効率よく移動できます。
+          </p>
+
+          <h3>フォームのアクセシビリティ</h3>
+          <p>
+            お問い合わせフォームを含むすべてのフォームコントロールには、
+            ラベルを明示的に関連付けます。
+            エラーが発生した場合は内容と修正方法をわかりやすく提示します。
+            必須項目はテキストと属性の両方で明示します。
+          </p>
+
+          <h3>動きの抑制（prefers-reduced-motion）</h3>
+          <p>
+            OS やブラウザの「動きを減らす」設定（<code>prefers-reduced-motion: reduce</code>）を
+            有効にしている場合、当サイトのアニメーションおよびトランジション効果を
+            自動的に最小化または無効化します。
+            前庭障害・てんかん等の利用者が安全にサイトをご利用いただけるよう配慮しています。
+          </p>
+
+          <h3>フォーカスの可視化</h3>
+          <p>
+            キーボードやタッチ操作でフォーカスが当たった要素は、視覚的に識別できるフォーカスインジケータを表示します。
+            フォーカスリングは十分なコントラスト比（3:1 以上）を持つデザインを適用しています。
+          </p>
+
+          <h3>文字サイズと可読性</h3>
+          <p>
+            本文の文字サイズは 16px 以上を基準とし、行間は 1.9 以上を確保しています。
+            ブラウザの文字サイズ設定を変更しても、コンテンツが適切に表示されるよう設計しています。
+          </p>
+
+
+          <h2>対象範囲</h2>
+          <p>
+            本方針は、当社が運営する以下のドメインのウェブサイトを対象とします。
+          </p>
+          <ul>
+            <li>
+              <a href="https://zabuton.co.jp/" target="_blank" rel="noopener noreferrer">
+                https://zabuton.co.jp/
+              </a>（当社公式ウェブサイト）
+            </li>
+          </ul>
+          <p>
+            外部サービス（お問い合わせシステム・アクセス解析サービス等の埋め込みコンテンツ）については、
+            各サービス提供者のアクセシビリティ方針に委ねます。
+          </p>
+
+
+          <h2>既知の制限事項</h2>
+          <!--
+            要確認: 公開前のアクセシビリティ監査（axe DevTools 等）の結果に基づき、
+            既知の問題点・達成できていない基準を具体的に記載すること。
+            監査前は以下のプレースホルダを使用する。
+          -->
+          <p>
+            当サイトのアクセシビリティ監査は継続的に実施しています。
+            現時点での既知の制限事項については、フィードバック窓口よりお問い合わせください。
+            確認された問題は優先度に応じて順次改善します。
+          </p>
+
+
+          <h2>フィードバック窓口</h2>
+          <p>
+            当サイトのアクセシビリティに関する問題や改善のご提案がある場合は、
+            以下の窓口までご連絡ください。いただいたフィードバックは真摯に受け止め、
+            継続的な改善に活用いたします。
+          </p>
+          <dl>
+            <dt>メールアドレス</dt>
+            <dd><a href="mailto:info@zabuton.co.jp">info@zabuton.co.jp</a></dd>
+            <dt>お問い合わせフォーム</dt>
+            <dd><a href="contact.html">お問い合わせページ</a></dd>
+            <dt>受付時間</dt>
+            <!--
+              要確認: 実際の受付時間・営業日をクライアントに確認して記載すること。
+            -->
+            <dd>平日 10:00〜17:00（土日祝・年末年始を除く）</dd>
+          </dl>
+          <p>
+            代替手段でのコンテンツ提供やアクセシブルな形式でのご連絡に関するご要望も、
+            可能な限り対応いたします。
+          </p>
+
+
+          <h2>本方針の改定について</h2>
+          <p>
+            本方針は、技術の進歩・ウェブ標準の変化・当社サービスの改善に伴い、
+            定期的に見直し・更新します。
+            重要な変更を行った場合は、本ページ上の最終更新日を更新してお知らせします。
+          </p>
+
+          <hr>
+
+          <p class="prose__note">
+            本方針に関するお問い合わせは、
+            <a href="contact.html">お問い合わせフォーム</a> または
+            <a href="mailto:info@zabuton.co.jp">info@zabuton.co.jp</a> までお送りください。
+          </p>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="cta-band__inner">
+        <span class="cta-band__eyebrow" aria-hidden="true">CONTACT US</span>
+        <h2 class="cta-band__title" id="cta-title">
+          まず、話してみませんか？
+        </h2>
+        <p class="cta-band__sub">
+          「自分に合うかわからない」「何から始めればいいか」──そんな気持ちのまま、相談してください。プレッシャーなし、フォーム1つでOKです。
+        </p>
+        <div class="cta-band__cta">
+          <a class="btn btn--primary btn--lg" href="contact.html">
+            お問い合わせはこちら <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="cta-band__email">
+          またはメールで: <a href="mailto:info@zabuton.co.jp">info@zabuton.co.jp</a>
+        </p>
+      </div>
+    </section>
+
+  </main><!-- /#main-content -->
+
+
+  <!-- FOOTER — footer.html より転写。現在ページのフッターリンクに aria-current="page" を付与 -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="site-footer__logo" href="index.html" aria-label="株式会社Zabuton — トップへ">
+          <span class="site-footer__logo-chip">
+            <img
+              src="assets/img/logo.svg"
+              alt="zabuton"
+              class="site-footer__logo-img"
+              width="139"
+              height="38"
+            >
+          </span>
+        </a>
+        <p class="site-footer__tagline">心地よい未来、ここから。</p>
+      </div>
+      <nav aria-label="フッターナビゲーション">
+        <div class="site-footer__nav-grid">
+          <div>
+            <h2 class="site-footer__col-title">サービス</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="services-learning.html">プログラミング学習</a></li>
+              <li><a class="site-footer__link" href="services-job-support.html">就活準備・サポート</a></li>
+              <li><a class="site-footer__link" href="services-matching.html">企業とのマッチング</a></li>
+              <li><a class="site-footer__link" href="services-retention.html">就職後の定着支援</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="site-footer__col-title">会社情報</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="about.html">私たちの想い</a></li>
+              <li><a class="site-footer__link" href="cases.html">実績・事例</a></li>
+              <li><a class="site-footer__link" href="news.html">お知らせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="site-footer__col-title">サポート</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="faq.html">よくある質問</a></li>
+              <li><a class="site-footer__link" href="column.html">コラム</a></li>
+              <li><a class="site-footer__link" href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="site-footer__col-title">事業者・企業の方へ</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="for-facilities.html">就労支援事業所の方へ</a></li>
+              <li><a class="site-footer__link" href="for-companies.html">採用企業の方へ</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="site-footer__partners">
+      <span class="site-footer__partners-label">提携・加盟</span>
+      <ul class="site-footer__partners-list" aria-label="提携・加盟先">
+        <li><span class="site-footer__partner-name">株式会社アットウェア</span></li>
+        <li><span class="site-footer__partner-name">一般社団法人翔明会</span></li>
+        <li><span class="site-footer__partner-name">日本アントレプレナー学会</span></li>
+        <li><span class="site-footer__partner-name">JEAP（日本障害者雇用促進事業者協会）</span></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="site-footer__bottom-inner">
+        <ul class="site-footer__legal-links">
+          <!-- 現在ページのリンクに aria-current="page" を付与 -->
+          <li><a class="site-footer__legal-link" href="privacy-policy.html">プライバシーポリシー</a></li>
+          <li><a class="site-footer__legal-link" href="accessibility.html" aria-current="page">アクセシビリティ方針</a></li>
+        </ul>
+        <p class="site-footer__copyright">
+          <small>&copy; 2016 株式会社Zabuton</small>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
