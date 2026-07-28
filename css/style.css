@@ -1303,10 +1303,6 @@ hr {
 .site-footer__logo-chip {
   display: inline-flex;
   align-items: center;
-  background: #FAF8F4;
-  padding: 8px 16px;
-  border: 3px solid #2C1F14;
-  box-shadow: 4px 4px 0 rgba(44, 31, 20, 0.25);
 }
 .site-footer__logo-img {
   height: 28px;
