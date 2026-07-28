@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — 検索エンジン向けXMLサイトマップ
+
+  URLは各ページの <link rel="canonical"> を一次情報として採用している。
+  記事ページ（column-*.html 全6本 / news-*.html 全4本）と sitemap.html は
+  canonical から取得した確定URLを使用。terms.html は README.md「フラット
+  構成 ↔ 将来の WordPress URL 対応表」に記載の値を使用し、canonical と
+  一致することを確認済み。
+
+  lastmod / changefreq / priority は根拠のない値を書けないため、
+  すべて省略している（捏造禁止）。
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://zabuton.co.jp/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/services/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/services/learning/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/services/job-support/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/services/matching/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/services/retention/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/about/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/cases/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/programming-for-everyone/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/ai-agent-job-support/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/learning-tips/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/working-in-it/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/html-css-for-beginners/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/column/retention-support/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/news/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/news/jeap-member/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/news/event-2025-07/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/news/partnership-2025-05/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/news/keynote-2024-11/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/faq/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/contact/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/for-facilities/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/for-companies/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/privacy-policy/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/accessibility/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/terms/</loc>
+  </url>
+  <url>
+    <loc>https://zabuton.co.jp/sitemap/</loc>
+  </url>
+</urlset>
