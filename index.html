@@ -496,7 +496,81 @@
 
 
     <!-- =====================================================
-      SECTION 5: CASES / ACHIEVEMENTS
+      SECTION 5: HOW WE WORK — Zabuton自身の進め方（アジャイル／スクラム実践）
+      既存 .service-flow コンポーネントを流用。背景のみ modifier で offwhite 化。
+    ====================================================== -->
+    <section class="service-flow service-flow--offwhite" id="how-we-work" aria-labelledby="howwework-title">
+      <div class="service-flow__inner">
+
+        <div class="pixel-heading">
+          <span class="pixel-heading__label" aria-hidden="true">HOW WE WORK</span>
+          <h2 class="pixel-heading__title" id="howwework-title">
+            私たち自身が、この進め方で働いています
+          </h2>
+          <div class="pixel-heading__rule" aria-hidden="true"><span></span></div>
+          <p class="pixel-heading__sub">
+            Zabutonは、自分たちの開発と運営そのものを「アジャイル／スクラム」という進め方で回しています。小さく試して、見せて、ふりかえって直す。現場にお届けしているのは教科書の知識ではなく、私たちが実務のなかで使っているこの進め方そのものです。
+          </p>
+        </div>
+
+        <div class="service-flow__steps">
+
+          <div class="service-flow__step">
+            <div class="service-flow__step-number">01</div>
+            <h3 class="service-flow__step-title">小さく決めて、はじめる</h3>
+            <p class="service-flow__step-text">
+              遠い先まで一度に計画せず、「次の短い期間でやること」だけを決めて動き出します。途中で状況が変わっても、立て直しがききます。
+            </p>
+          </div>
+
+          <div class="service-flow__connector" aria-hidden="true">→</div>
+
+          <div class="service-flow__step">
+            <div class="service-flow__step-number">02</div>
+            <h3 class="service-flow__step-title">つくって、見せる</h3>
+            <p class="service-flow__step-text">
+              完成してからではなく、途中のものを早めに見せて意見をもらいます。ズレは小さいうちのほうが、ずっと軽く直せます。
+            </p>
+          </div>
+
+          <div class="service-flow__connector" aria-hidden="true">→</div>
+
+          <div class="service-flow__step">
+            <div class="service-flow__step-number">03</div>
+            <h3 class="service-flow__step-title">ふりかえって、変える</h3>
+            <p class="service-flow__step-text">
+              うまくいったこと・つまずいたことを毎回言葉にし、次のやり方を変えます。うまくいかなかったときに見直すのは、その人のがんばりではなく、進め方のほうです。
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 反復（ループ）表現: 03 から 01 へ戻る折り返しパス。
+             パスはCSS擬似要素の装飾で、意味はチップ内の実テキストで担保する。 -->
+        <div class="service-flow__loop">
+          <span class="pixel-tag pixel-tag--brown">
+            <span aria-hidden="true">↻</span> この01〜03を、短いサイクルで繰り返します
+          </span>
+        </div>
+
+        <ul class="service-overview__points service-flow__note" aria-label="この進め方の補足">
+          <li class="service-overview__point">
+            学ぶ方へ — 「一度で完璧に」を求めません。体調や理解のペースに合わせて、進め方のほうを調整します。
+          </li>
+          <li class="service-overview__point">
+            就労支援事業所さまへ — 訓練の内容も、短いサイクルで一緒に見直しながら、現場に合わせていきます。
+          </li>
+          <li class="service-overview__point">
+            企業さまへ — IT開発の現場で実際に使われている進め方を、私たち自身の実践としてご説明できます。
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+      SECTION 6: CASES / ACHIEVEMENTS
       定性表現のみ — 数値プレースホルダなし（確定）
     ====================================================== -->
     <section class="cases" id="cases" aria-labelledby="cases-title">
@@ -559,7 +633,7 @@
 
 
     <!-- =====================================================
-      SECTION 6: TEAM / 私たちの想い
+      SECTION 7: TEAM / 私たちの想い
     ====================================================== -->
     <section class="team" id="about" aria-labelledby="team-title">
       <div class="team__inner">
@@ -647,7 +721,7 @@
 
 
     <!-- =====================================================
-      SECTION 7: FAQ
+      SECTION 8: FAQ
     ====================================================== -->
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="faq__inner">
@@ -788,7 +862,7 @@
 
 
     <!-- =====================================================
-      SECTION 8: NEWS / COLUMN
+      SECTION 9: NEWS / COLUMN
     ====================================================== -->
     <section class="news" id="news" aria-labelledby="news-title">
       <div class="news__inner">
@@ -857,7 +931,7 @@
 
 
     <!-- =====================================================
-      SECTION 9: MAIN CTA BAND
+      SECTION 10: MAIN CTA BAND
     ====================================================== -->
     <section class="cta-band" aria-labelledby="cta-title">
       <div class="cta-band__inner">
